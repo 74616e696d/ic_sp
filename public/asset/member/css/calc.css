@@ -1,0 +1,143 @@
+.calc{
+    margin-top:15px;
+    width: 255px;
+    height: 244px;
+    border: 1px solid #67A54B;
+    overflow: visible;
+    display: inline-block;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    position: relative;
+}
+.calc .calc-in{
+    width: 235px;
+    height: 225px;
+    background: #8BC2E9;
+    margin: 7px;
+    border: solid 1px #102a3e;
+    bottom: 0;
+    position: absolute;
+}
+
+.calc p{
+    background: url("calc-icon.png") no-repeat;
+    padding-left: 15px;
+    margin: 8px;
+    margin-top: 5px;
+    color: #fff;
+    float: left;
+}
+.wcmd{
+    float: right;
+    margin-right: 7px;
+}
+.wcmd a{
+    float: left;
+}
+.wcmd .min{
+    background:url('min.png') no-repeat;
+    width: 29px;
+    height: 19px;
+}
+.wcmd .max{
+    background:url('max.png') no-repeat;
+    width: 27px;
+    height: 19px
+}
+.wcmd .close{
+    background:url('close.png') no-repeat;
+    width: 48px;
+    height:19px;
+}
+#display{
+    width:203px;
+    margin: 0px;
+    border: 1px solid #aaa;
+    font-size: 40px;
+    color: #333;
+    text-align: right;
+    font-size: 40px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    height: 50px;
+    border-radius: 3px;
+    background: #fff;
+}
+.num-wrap{
+    margin: 20px auto;
+    width: 186px;
+}
+#n0{
+    width: 71px;
+    height: 25px;
+}
+#neq{
+    width: 34px;
+    height: 59px;
+    float: right;
+}
+.calc button{
+    width: 34px;
+    height: 27px;
+    border: 1px solid #9EAABB;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+button:hover{
+    cursor:pointer;
+}
+#panel,#hints_1
+{
+    padding:5px;
+    text-align:center;
+    background-color:#e5eecc;
+    border:solid 1px #c3c3c3;
+    color:#555;
+    clear:both;
+}
+#panel,#hints_1
+{
+    display:none;
+}
+.View_Answer{
+    margin-bottom:10px;
+}
+.View_Answer li{
+    list-style:none;
+    float:left;
+    padding:0 20px;
+}
+.input-append button.add-on {
+    height: inherit !important;
+}
+.input-append{
+    margin-top:15px;
+}
+.input-append input{
+    height:28px;
+    background:#c8d5c2;
+    border:0;
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px;
+    border-radius:0px;
+    color:#fff;
+}
+.input-append .btn{
+    background:#fff;
+}
+.top-buffer{
+    margin-top:20px;
+}
+.right-buffer{
+    margin-right:20px;
+}
+.join{
+    border-bottom:1px solid #eeeeee;
+    border-top:1px solid #eeeeee;
+    display:block;
+    height:40px;
+    padding:10px 0;
+    line-height:35px;
+}
+

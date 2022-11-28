@@ -1,0 +1,302 @@
+*{
+	/*padding: 0;
+	margin: 0;*/
+}
+.full-color-div {
+	background:#3156a7 url("../img/pattern.png") no-repeat scroll top right;
+	/*position: relative;*/
+	height: auto;
+	max-width: 1600px;
+	font-size: 2em;
+	z-index: -2;
+	padding: 6% 0;
+}
+
+.stripe-pattern {
+  max-height: 100%;
+  position: absolute;
+  right: 15px;
+  top: 0;
+  z-index: 0;
+}
+
+.bcs, .text-bcs {
+	color: #ffffff;
+	font: 300 80%/100% Roboto;
+}
+
+.forty-days {
+	font-size: 4em;
+	color: #fefefe;
+	font-family: BaskOldFace;
+}
+
+.forty-days-four {
+	position: relative;
+}
+
+.forty-days-zero {
+	font: 400 105%/0px BellMTBold;
+}
+
+.forty-days-days {
+	color: #ff7200;
+	font: 700 80% / 0 Rockwell;
+}
+
+.crash-crash {
+	color: #fee300;
+	font: 700 48% / 0 Rockwell;
+	margin: 0 2%;
+	line-height: 100%;
+}
+
+.date-absolute-crash {
+	color: #ffffff;
+	font: 400 20% / 0px Rockwell;
+	position: absolute;
+	bottom: 0%;
+	left: 0%;
+}
+
+
+
+/* very extreme large browser */
+
+@media(min-width: 1368px){
+.forty-days {
+		font-size: 3.5em;
+	}}
+
+/* lg version*/
+
+@media(min-width: 1200px) and (max-width: 1367px){
+	.forty-days {
+		font-size: 3.5em;
+	}}
+
+/* md version*/
+
+@media(min-width: 992px) and (max-width: 1199px){
+	.full-color-div {
+		padding: 5% 0;
+		font-size: 2em;
+	}
+	.forty-days {
+		font-size: 3em;
+	}
+	.crash-crash {
+		font: 700 48% / 0 Rockwell;
+		margin: 0 2%;
+		display: inline;
+	}
+	.date-absolute-crash {
+		bottom: -10%;
+	}
+}
+
+/* ipad */
+@media (min-width:768px) and (max-width:1024px) and (orientation: landscape){
+	.full-color-div {
+		padding: 5% 0;
+		font-size: 1.7em;
+	}
+	.forty-days {
+		font-size: 3em;
+	}
+	.crash-crash {
+		font: 700 48% / 0 Rockwell;
+		margin: 0 2%;
+		display: inline;
+	}
+	.date-absolute-crash {
+		bottom: -10%;
+	}
+}
+
+/* sm version */
+
+@media(min-width: 768px) and (max-width: 991px){
+	.full-color-div {
+		padding: 5% 0;
+		font-size: 1.5em;
+	}
+	.forty-days {
+		font-size: 2.5em;
+	}
+	.crash-crash {
+		font: 700 48% / 0 Rockwell;
+		margin: 0 2%;
+		display: inline;
+	}
+	.date-absolute-crash {
+		bottom: -10%;
+	}
+}
+
+/* xs version */
+
+@media(max-width: 767px){
+	
+}
+
+@media(max-width:319px){
+	.full-color-div {
+		padding: 5% 0;
+		font-size: 1em;
+	}
+
+	.bcs, .text-bcs {
+		font: 300 80%/100% Roboto;
+	}
+
+	.forty-days {
+		font-size: 2em;
+	}
+
+	.forty-days-zero {
+		font: 400 105%/0px BellMTBold;
+	}
+
+	.forty-days-days {
+		font: 700 80% / 0 Rockwell;
+	}
+
+	.crash-crash {
+		font: 700 48% / 0 Rockwell;
+		margin: 0 2%;
+	}
+
+	.date-absolute-crash {
+		font: 400 20% / 0 Rockwell;
+		bottom: -10%;
+		left: 3%;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 568px){
+	.full-color-div {
+		padding: 5% 0;
+		font-size: 1.3em;
+	}
+
+	.bcs, .text-bcs {
+		font: 300 80%/100% Roboto;
+	}
+
+	.forty-days {
+		font-size: 2em;
+	}
+
+	.forty-days-zero {
+		font: 400 105%/0px BellMTBold;
+	}
+
+	.forty-days-days {
+		font: 700 80% / 0 Rockwell;
+	}
+
+	.crash-crash {
+		font: 700 48% / 0 Rockwell;
+		margin: 0 2%;
+		display: block;
+	}
+
+	.date-absolute-crash {
+		font: 400 20% / 0 Rockwell;
+		bottom: -50%;
+		left: 3%;
+	}
+}
+
+/* 320px to 568 px landscape*/
+
+@media (min-width: 320px) and (max-width: 568px) and (orientation: landscape){
+	.crash-crash {
+		font: 700 48% / 0 Rockwell;
+		margin: 0 2%;
+		display: inline;
+	}
+	.date-absolute-crash {
+		bottom: -10%;
+	}
+}
+
+/*375px to 667px Portrait*/
+@media (min-width: 375px) and (max-width: 667px){
+	.full-color-div {
+		padding: 5% 0;
+		font-size: 1.3em;
+	}
+	.forty-days {
+		font-size: 2em;
+	}
+	.crash-crash {
+		font: 700 48% / 0 Rockwell;
+		margin: 0 2%;
+		display: block;
+	}
+	.date-absolute-crash {
+		bottom: -50%;
+	}
+}
+
+/* 375px to 667 px landscape*/
+
+@media (min-width: 375px) and (max-width: 667px) and (orientation: landscape){
+	.full-color-div {
+		padding: 5% 0;
+		font-size: 1.3em;
+	}
+	.forty-days {
+		font-size: 2em;
+	}
+	.crash-crash {
+		font: 700 48% / 0 Rockwell;
+		margin: 0 2%;
+		display: inline;
+	}
+	.date-absolute-crash {
+		bottom: -10%;
+	}
+}
+
+
+@media (min-width: 414px) and (max-width: 736px){
+	.full-color-div {
+		padding: 5% 0;
+		font-size: 1.3em;
+	}
+	.forty-days {
+		font-size: 2em;
+	}
+	.crash-crash {
+		font: 700 48% / 0 Rockwell;
+		margin: 0 2%;
+		display: block;
+	}
+	.date-absolute-crash {
+		bottom: -50%;
+	}
+}
+
+
+/* 414px to 736 px landscape*/
+
+@media (min-width: 414px) and (max-width: 736px) and (orientation: landscape){
+	.full-color-div {
+		padding: 5% 0;
+		font-size: 1.3em;
+	}
+	.forty-days {
+		font-size: 2em;
+	}
+	.crash-crash {
+		font: 700 48% / 0 Rockwell;
+		margin: 0 2%;
+		display: inline;
+	}
+	.date-absolute-crash {
+		bottom: -10%;
+	}
+}

@@ -1,0 +1,523 @@
+[
+  {
+    "FIELD1":"1",
+    "FIELD2":"Barguna",
+    "FIELD3":"Barisal",
+    "FIELD4":"882 (58)",
+    "FIELD5":"1831 (37)",
+    "FIELD6":"481 (61)"
+  },
+  {
+    "FIELD1":"2",
+    "FIELD2":"Barisal",
+    "FIELD3":"Barisal",
+    "FIELD4":"2291 (23)",
+    "FIELD5":"2785 (20)",
+    "FIELD6":"823 (45)"
+  },
+  {
+    "FIELD1":"3",
+    "FIELD2":"Bhola",
+    "FIELD3":"Barisal",
+    "FIELD4":"1758 (36)",
+    "FIELD5":"3403 (14)",
+    "FIELD6":"517 (59)"
+  },
+  {
+    "FIELD1":"4",
+    "FIELD2":"Jhalokati",
+    "FIELD3":"Barisal",
+    "FIELD4":"596 (63)",
+    "FIELD5":"749 (63)",
+    "FIELD6":"795 (46)"
+  },
+  {
+    "FIELD1":"5",
+    "FIELD2":"Patuakhali",
+    "FIELD3":"Barisal",
+    "FIELD4":"1517 (41)",
+    "FIELD5":"3221 (15)",
+    "FIELD6":"471 (62)"
+  },
+  {
+    "FIELD1":"6",
+    "FIELD2":"Pirojpur",
+    "FIELD3":"Barisal",
+    "FIELD4":"1103 (53)",
+    "FIELD5":"1308 (50)",
+    "FIELD6":"844 (44)"
+  },
+  {
+    "FIELD1":"7",
+    "FIELD2":"Bandarban",
+    "FIELD3":"Chittagong",
+    "FIELD4":"383 (64)",
+    "FIELD5":"4479 (3)",
+    "FIELD6":"86 (64)"
+  },
+  {
+    "FIELD1":"8",
+    "FIELD2":"Brahmanbaria",
+    "FIELD3":"Chittagong",
+    "FIELD4":"2808 (14)",
+    "FIELD5":"1927 (35)",
+    "FIELD6":"1457 (8)"
+  },
+  {
+    "FIELD1":"9",
+    "FIELD2":"Chandpur",
+    "FIELD3":"Chittagong",
+    "FIELD4":"2393 (20)",
+    "FIELD5":"1704 (40)",
+    "FIELD6":"1404 (10)"
+  },
+  {
+    "FIELD1":"10",
+    "FIELD2":"Chittagong",
+    "FIELD3":"Chittagong",
+    "FIELD4":"7509 (2)",
+    "FIELD5":"5283 (2)",
+    "FIELD6":"1421 (9)"
+  },
+  {
+    "FIELD1":"11",
+    "FIELD2":"Comilla",
+    "FIELD3":"Chittagong",
+    "FIELD4":"5304 (3)",
+    "FIELD5":"3085 (16)",
+    "FIELD6":"1719 (5)"
+  },
+  {
+    "FIELD1":"12",
+    "FIELD2":"Cox's Bazar",
+    "FIELD3":"Chittagong",
+    "FIELD4":"2275 (24)",
+    "FIELD5":"2492 (26)",
+    "FIELD6":"913 (35)"
+  },
+  {
+    "FIELD1":"13",
+    "FIELD2":"Feni",
+    "FIELD3":"Chittagong",
+    "FIELD4":"1420 (44)",
+    "FIELD5":"928 (61)",
+    "FIELD6":"1530 (6)"
+  },
+  {
+    "FIELD1":"14",
+    "FIELD2":"Khagrachhari",
+    "FIELD3":"Chittagong",
+    "FIELD4":"608 (61)",
+    "FIELD5":"2700 (21)",
+    "FIELD6":"225 (64)"
+  },
+  {
+    "FIELD1":"15",
+    "FIELD2":"Lakshmipur",
+    "FIELD3":"Chittagong",
+    "FIELD4":"1711 (38)",
+    "FIELD5":"1456 (46)",
+    "FIELD6":"1175 (13)"
+  },
+  {
+    "FIELD1":"16",
+    "FIELD2":"Noakhali",
+    "FIELD3":"Chittagong",
+    "FIELD4":"3072 (8)",
+    "FIELD5":"3601 (9)",
+    "FIELD6":"853 (43)"
+  },
+  {
+    "FIELD1":"17",
+    "FIELD2":"Rangamati",
+    "FIELD3":"Chittagong",
+    "FIELD4":"596 (62)",
+    "FIELD5":"6116 (1)",
+    "FIELD6":"97 (63)"
+  },
+  {
+    "FIELD1":"18",
+    "FIELD2":"Dhaka",
+    "FIELD3":"Dhaka",
+    "FIELD4":"11875 (1)",
+    "FIELD5":"1464 (45)",
+    "FIELD6":"8111 (1)"
+  },
+  {
+    "FIELD1":"19",
+    "FIELD2":"Faridpur",
+    "FIELD3":"Dhaka",
+    "FIELD4":"1867 (34)",
+    "FIELD5":"2073 (32)",
+    "FIELD6":"901 (37)"
+  },
+  {
+    "FIELD1":"20",
+    "FIELD2":"Gazipur",
+    "FIELD3":"Dhaka",
+    "FIELD4":"3333 (6)",
+    "FIELD5":"1800 (39)",
+    "FIELD6":"1852 (3)"
+  },
+  {
+    "FIELD1":"21",
+    "FIELD2":"Gopalganj",
+    "FIELD3":"Dhaka",
+    "FIELD4":"1149 (49)",
+    "FIELD5":"1490 (44)",
+    "FIELD6":"771 (49)"
+  },
+  {
+    "FIELD1":"22",
+    "FIELD2":"Jamalpur",
+    "FIELD3":"Dhaka",
+    "FIELD4":"2265 (25)",
+    "FIELD5":"2032 (33)",
+    "FIELD6":"1115 (18)"
+  },
+  {
+    "FIELD1":"23",
+    "FIELD2":"Kishoreganj",
+    "FIELD3":"Dhaka",
+    "FIELD4":"2853 (13)",
+    "FIELD5":"2689 (22)",
+    "FIELD6":"1061 (22)"
+  },
+  {
+    "FIELD1":"24",
+    "FIELD2":"Madaripur",
+    "FIELD3":"Dhaka",
+    "FIELD4":"1149 (50)",
+    "FIELD5":"1145 (54)",
+    "FIELD6":"1004 (26)"
+  },
+  {
+    "FIELD1":"25",
+    "FIELD2":"Manikganj",
+    "FIELD3":"Dhaka",
+    "FIELD4":"1379 (46)",
+    "FIELD5":"1379 (48)",
+    "FIELD6":"1000 (27)"
+  },
+  {
+    "FIELD1":"26",
+    "FIELD2":"Munshiganj",
+    "FIELD3":"Dhaka",
+    "FIELD4":"1420 (43)",
+    "FIELD5":"955 (60)",
+    "FIELD6":"1487 (7)"
+  },
+  {
+    "FIELD1":"27",
+    "FIELD2":"Mymensingh",
+    "FIELD3":"Dhaka",
+    "FIELD4":"5042 (4)",
+    "FIELD5":"4363 (5)",
+    "FIELD6":"1156 (15)"
+  },
+  {
+    "FIELD1":"28",
+    "FIELD2":"Narayanganj",
+    "FIELD3":"Dhaka",
+    "FIELD4":"2897 (11)",
+    "FIELD5":"759 (62)",
+    "FIELD6":"4139 (2)"
+  },
+  {
+    "FIELD1":"29",
+    "FIELD2":"Narsingdi",
+    "FIELD3":"Dhaka",
+    "FIELD4":"2202 (27)",
+    "FIELD5":"1141 (55)",
+    "FIELD6":"1930 (4)"
+  },
+  {
+    "FIELD1":"30",
+    "FIELD2":"Netrakona",
+    "FIELD3":"Dhaka",
+    "FIELD4":"2207 (26)",
+    "FIELD5":"2810 (18)",
+    "FIELD6":"786 (47)"
+  },
+  {
+    "FIELD1":"31",
+    "FIELD2":"Rajbari",
+    "FIELD3":"Dhaka",
+    "FIELD4":"1040 (54)",
+    "FIELD5":"1119 (56)",
+    "FIELD6":"929 (34)"
+  },
+  {
+    "FIELD1":"32",
+    "FIELD2":"Shariatpur",
+    "FIELD3":"Dhaka",
+    "FIELD4":"1146 (51)",
+    "FIELD5":"1182 (52)",
+    "FIELD6":"970 (30)"
+  },
+  {
+    "FIELD1":"33",
+    "FIELD2":"Sherpur",
+    "FIELD3":"Dhaka",
+    "FIELD4":"1334 (47)",
+    "FIELD5":"1364 (49)",
+    "FIELD6":"978 (28)"
+  },
+  {
+    "FIELD1":"34",
+    "FIELD2":"Tangail",
+    "FIELD3":"Dhaka",
+    "FIELD4":"3571 (5)",
+    "FIELD5":"3414 (13)",
+    "FIELD6":"1046 (24)"
+  },
+  {
+    "FIELD1":"35",
+    "FIELD2":"Bagerhat",
+    "FIELD3":"Khulna",
+    "FIELD4":"1461 (42)",
+    "FIELD5":"3959 (6)",
+    "FIELD6":"369 (63)"
+  },
+  {
+    "FIELD1":"36",
+    "FIELD2":"Chuadanga",
+    "FIELD3":"Khulna",
+    "FIELD4":"1123 (52)",
+    "FIELD5":"1177 (53)",
+    "FIELD6":"954 (32)"
+  },
+  {
+    "FIELD1":"37",
+    "FIELD2":"Jessore",
+    "FIELD3":"Khulna",
+    "FIELD4":"2742 (15)",
+    "FIELD5":"2567 (24)",
+    "FIELD6":"1068 (21)"
+  },
+  {
+    "FIELD1":"38",
+    "FIELD2":"Jhenaidah",
+    "FIELD3":"Khulna",
+    "FIELD4":"1756 (37)",
+    "FIELD5":"1961 (34)",
+    "FIELD6":"895 (38)"
+  },
+  {
+    "FIELD1":"39",
+    "FIELD2":"Khulna",
+    "FIELD3":"Khulna",
+    "FIELD4":"2294 (22)",
+    "FIELD5":"4394 (4)",
+    "FIELD6":"522 (58)"
+  },
+  {
+    "FIELD1":"40",
+    "FIELD2":"Kushtia",
+    "FIELD3":"Khulna",
+    "FIELD4":"1933 (32)",
+    "FIELD5":"1601 (42)",
+    "FIELD6":"1207 (13)"
+  },
+  {
+    "FIELD1":"41",
+    "FIELD2":"Magura",
+    "FIELD3":"Khulna",
+    "FIELD4":"913 (56)",
+    "FIELD5":"1049 (57)",
+    "FIELD6":"871 (41)"
+  },
+  {
+    "FIELD1":"42",
+    "FIELD2":"Meherpur",
+    "FIELD3":"Khulna",
+    "FIELD4":"652 (60)",
+    "FIELD5":"579 (64)",
+    "FIELD6":"910 (36)"
+  },
+  {
+    "FIELD1":"43",
+    "FIELD2":"Narail",
+    "FIELD3":"Khulna",
+    "FIELD4":"715 (59)",
+    "FIELD5":"990 (58)",
+    "FIELD6":"722 (52)"
+  },
+  {
+    "FIELD1":"44",
+    "FIELD2":"Satkhira",
+    "FIELD3":"Khulna",
+    "FIELD4":"1973 (31)",
+    "FIELD5":"3858 (7)",
+    "FIELD6":"511 (60)"
+  },
+  {
+    "FIELD1":"45",
+    "FIELD2":"Bogra",
+    "FIELD3":"Rajshahi",
+    "FIELD4":"3371 (7)",
+    "FIELD5":"2920 (17)",
+    "FIELD6":"1154 (16)"
+  },
+  {
+    "FIELD1":"46",
+    "FIELD2":"Joypurhat",
+    "FIELD3":"Rajshahi",
+    "FIELD4":"909 (57)",
+    "FIELD5":"965 (59)",
+    "FIELD6":"942 (33)"
+  },
+  {
+    "FIELD1":"47",
+    "FIELD2":"Naogaon",
+    "FIELD3":"Rajshahi",
+    "FIELD4":"2576 (16)",
+    "FIELD5":"3436 (12)",
+    "FIELD6":"750 (51)"
+  },
+  {
+    "FIELD1":"48",
+    "FIELD2":"Natore",
+    "FIELD3":"Rajshahi",
+    "FIELD4":"1696 (39)",
+    "FIELD5":"1896 (36)",
+    "FIELD6":"894 (39)"
+  },
+  {
+    "FIELD1":"49",
+    "FIELD2":"Nawabganj",
+    "FIELD3":"Rajshahi",
+    "FIELD4":"1635 (40)",
+    "FIELD5":"1703 (41)",
+    "FIELD6":"960 (31)"
+  },
+  {
+    "FIELD1":"50",
+    "FIELD2":"Pabna",
+    "FIELD3":"Rajshahi",
+    "FIELD4":"2497 (18)",
+    "FIELD5":"2372 (28)",
+    "FIELD6":"1053 (23)"
+  },
+  {
+    "FIELD1":"51",
+    "FIELD2":"Rajshahi",
+    "FIELD3":"Rajshahi",
+    "FIELD4":"2573 (17)",
+    "FIELD5":"2407 (27)",
+    "FIELD6":"1069 (20)"
+  },
+  {
+    "FIELD1":"52",
+    "FIELD2":"Sirajganj",
+    "FIELD3":"Rajshahi",
+    "FIELD4":"3072 (9)",
+    "FIELD5":"2498 (25)",
+    "FIELD6":"1230 (11)"
+  },
+  {
+    "FIELD1":"53",
+    "FIELD2":"Dinajpur",
+    "FIELD3":"Rangpur",
+    "FIELD4":"2970 (10)",
+    "FIELD5":"3438 (11)",
+    "FIELD6":"864 (42)"
+  },
+  {
+    "FIELD1":"54",
+    "FIELD2":"Gaibandha",
+    "FIELD3":"Rangpur",
+    "FIELD4":"2349 (21)",
+    "FIELD5":"2179 (31)",
+    "FIELD6":"1078 (19)"
+  },
+  {
+    "FIELD1":"55",
+    "FIELD2":"Kurigram",
+    "FIELD3":"Rangpur",
+    "FIELD4":"2050 (29)",
+    "FIELD5":"2296 (30)",
+    "FIELD6":"893 (40)"
+  },
+  {
+    "FIELD1":"56",
+    "FIELD2":"Lalmonirhat",
+    "FIELD3":"Rangpur",
+    "FIELD4":"1249 (48)",
+    "FIELD5":"1241 (51)",
+    "FIELD6":"1006 (25)"
+  },
+  {
+    "FIELD1":"57",
+    "FIELD2":"Nilphamari",
+    "FIELD3":"Rangpur",
+    "FIELD4":"1820 (35)",
+    "FIELD5":"1580 (43)",
+    "FIELD6":"1152 (17)"
+  },
+  {
+    "FIELD1":"58",
+    "FIELD2":"Panchagarh",
+    "FIELD3":"Rangpur",
+    "FIELD4":"981 (55)",
+    "FIELD5":"1405 (47)",
+    "FIELD6":"698 (53)"
+  },
+  {
+    "FIELD1":"59",
+    "FIELD2":"Rangpur",
+    "FIELD3":"Rangpur",
+    "FIELD4":"2866 (12)",
+    "FIELD5":"2368 (29)",
+    "FIELD6":"1210 (12)"
+  },
+  {
+    "FIELD1":"60",
+    "FIELD2":"Thakurgaon",
+    "FIELD3":"Rangpur",
+    "FIELD4":"1380 (45)",
+    "FIELD5":"1810 (38)",
+    "FIELD6":"762 (50)"
+  },
+  {
+    "FIELD1":"61",
+    "FIELD2":"Habiganj",
+    "FIELD3":"Sylhet",
+    "FIELD4":"2059 (28)",
+    "FIELD5":"2637 (23)",
+    "FIELD6":"781 (48)"
+  },
+  {
+    "FIELD1":"62",
+    "FIELD2":"Moulvibazar",
+    "FIELD3":"Sylhet",
+    "FIELD4":"1902 (33)",
+    "FIELD5":"2799 (19)",
+    "FIELD6":"679 (54)"
+  },
+  {
+    "FIELD1":"63",
+    "FIELD2":"Sunamganj",
+    "FIELD3":"Sylhet",
+    "FIELD4":"2443 (19)",
+    "FIELD5":"3670 (8)",
+    "FIELD6":"666 (55)"
+  },
+  {
+    "FIELD1":"64",
+    "FIELD2":"Sylhet",
+    "FIELD3":"Sylhet",
+    "FIELD4":"3404 (6)",
+    "FIELD5":"3490 (10)",
+    "FIELD6":"975 (29)"
+  },
+   {
+    "FIELD1":"65",
+    "FIELD2":"Anywhere in Bangladesh",
+    "FIELD3":"Anywhere in Bangladesh",
+    "FIELD4":"",
+    "FIELD5":"",
+    "FIELD6":""
+  }
+  
+]

@@ -1,0 +1,47 @@
+@media only screen and (max-width: 800px) 
+{
+        
+    /* Force table to not be like tables anymore */
+    .tbl-responsive table, 
+    .tbl-responsive thead, 
+    .tbl-responsive tbody, 
+    .tbl-responsive th, 
+    .tbl-responsive td, 
+    .tbl-responsive tr { 
+        display:block; 
+    }
+ 
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .tbl-responsive thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+ 
+    .tbl-responsive tr { border: 1px solid .ccc; }
+ 
+    .tbl-responsive td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid .eee; 
+        position: relative;
+        padding-left: 50%; 
+        white-space: normal;
+        text-align:left;
+    }
+ 
+    .tbl-responsive td:before { 
+        /*position: absolute;*/
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 30%; 
+        white-space: nowrap;
+        text-align:left;
+        font-weight: bold;
+    }
+ 
+    .tbl-responsive td:before { content: attr(data-title); }
+}
+
+

@@ -1,0 +1,33 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+    
+/**
+     * Author : Shamim
+     * Last Update : 17-01-2013
+     * Description : small Description
+     * Total Functions : 10
+     */
+class MTest extends CI_Model {
+
+    function __construct()
+    {
+        parent::__construct();
+    }
+	function get_all()
+	{
+		$query="select *from tblTest";
+		$q=$this->db->query($query);
+		if($q->num_rows()>0)
+		{
+			$result=$q->result();
+			return $result;
+		}
+		else
+		{
+			return false;
+		}
+	}
+    
+   
+    
+}
+    

@@ -1,0 +1,200 @@
+@extends('job.front_master.master')
+@section('content')
+<div class="container-fluid j_c_h">
+	<p>LOOKING FOR A GOOD <span class="j_c_h_b">JOB?</span> FIND IT ON <br>
+	<span class="j_c_h_b">
+	iconpreparation.com</span>
+	</p>
+</div>
+
+<div class="big_spacer"></div>
+
+<div class="container">
+	<div class="row">
+	    <div class="col-md-8 col-sm-8 col-xs-12">
+	        <div class="job_portion_bdr">
+	            <div id="jobs">
+	                <h4>JOBS</h4>
+	            </div>
+	            <div class="search_box">
+	            	<form method="post" target="_blank" action="{{ $base_url }}job/job_list/search">
+	                <div class="input-group">
+	                  <input name='term' type="text" class="form-control" placeholder="Keyword, jobTitle, Company, Category, Position">
+	                  <span class="input-group-btn">
+	                    <button class="btn btn-default" type="submit">Search</button>
+	                  </span>
+	                </div>
+	                </form>
+	            </div>
+
+	            <div class="search_option">
+	                <ul id='jobTab' class='nav nav-tabs' role='tablist'>
+	                    <li role="presentation" class="active"> 
+	                    <a href="#tab1" aria-controls="tab1" role="tab">
+	                    <i class="fa fa-bars"></i>Search By Category </a>
+	                    </li>
+	                    <li role="presentation"> 
+	                    <a href="#tab2" aria-controls="tab2" role="tab">
+	                    <i class="fa fa-map-marker"></i>Search By Location</a>
+	                    </li>
+	                    <li role="presentation"> 
+	                    <a href="#tab3" aria-controls="tab3" role="tab">
+	                    <i class="fa fa-building-o"></i>Search By Company</a>
+	                    </li>
+	                    <li role="presentation"> 
+	                    <a href="#tab4" aria-controls="tab4" role="tab">
+	                    <i class="fa fa-angle-double-right"></i>Deadline Tomorrow</a>
+	                    </li>
+	                </ul>
+	                <div class="tab-content">
+	                	<div role="tabpanel" class="tab-pane active" id="tab1">
+	                		<div class="job_option">
+	                		 @include('job.partial.job_by_category')
+	                		</div>
+	                	</div>
+	                	<div role="tabpanel" class="tab-pane" id="tab2">
+	                		<div class="job_option">
+	                		@include('job.partial.job_by_location')
+	                		</div>
+	                	</div>
+	                	<div role="tabpanel" class="tab-pane" id="tab3">
+	                		<div class="job_option">
+	                		@include('job.partial.job_by_company')
+	                		</div>
+	                	</div>
+	                	<div role="tabpanel" class="tab-pane" id="tab4">
+	                		<div class="job_option">
+	                		@include('job.partial.job_by_deadline')
+	                		</div>
+	                	</div>
+	                </div>
+	            </div>
+			
+	        </div>
+	    </div>
+
+	    <div class="col-md-4 col-sm-4 col-xs-12">
+	        <div class="add_portion_border">
+	            <div id="add_mob_no">
+	                <p>Call for ad : <span>+ 88 01715 864162</span></p>
+	            </div>
+	            <div>
+	                <img src="{{ $base_url }}asset/job/job_circular_add_1.jpg" id="add_1"class="img-responsive"alt="job_circular_add_1.jpg">
+	            </div>
+	            <div>
+	                <a href="{{ $base_url }}/current_news">
+	                <img src="{{ $base_url }}asset/job/job_circular_ad_2.jpg" id="add_2" class="img-responsive"alt="job_circular_ad_2.jpg">
+	                </a>
+	            </div>
+	            <div>
+	                <img src="{{ $base_url }}asset/job/job_circular_ad_3.jpg" id="add_3" class="img-responsive"alt="job_circular_ad_3.jpg">
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="big_spacer"></div>
+
+	<div class="row">
+	    <div class="col-md-8 col-sm-8 col-xs-12">
+	        <div class="row">
+	            <div class="col-md-4 col-sm-4 col-xs-12 job-box">
+	                <div id="career_guide" class="hvr-bounce-out">
+	                    <h4>Career Guide</h4>
+	                    <p><a href="#"><i class="fa fa-briefcase"></i></a></p>
+	                </div>
+	            </div>
+	            <div class="col-md-4 col-sm-4 col-xs-12 job-box">
+	                <div id="resumee_w_t" class="hvr-bounce-out">
+	                    <h4>Resumee Writing Tips</h4>
+	                    <p><a href="#"><i class="fa fa-pencil-square-o"></i></a></p>
+	                </div>
+	            </div>
+	            <div class="col-md-4 col-sm-4 col-xs-12 job-box">
+	                <div id="resumee_submit" class="hvr-bounce-out">
+	                    <h4>Resumee Submit</h4>
+	                    <p><a href="#">Browse</a></p>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+	    <div class="col-md-4 col-sm-4 col-xs-12 n_e_section">
+	        <div id="n_e_heading">
+	            <h4><i class="fa fa-newspaper-o"></i>News &amp; Events</h4>
+	        </div>
+	        <div id="n_e_1">
+	            <div class="row">
+	                <div class="col-md-3 col-sm-3 col-xs-4 n_e_img">
+	                    <img src="{{ $base_url }}asset/job/n_e_img_1.jpg" alt="n_e_img_1.jpg">
+	                </div>
+	                <div class="col-md-9 col-sm-9 col-xs-8 n_e_dis">
+	                    <h4><a href="#">Entrepreneur</a></h4>
+	                    <p>The Three Attributes to Look for in Top Talent </p>
+	                </div>
+	            </div>
+	        </div>
+
+	        <div class="very_small_spacer"></div>
+
+	        <div id="n_e_2">
+	            <div class="row">
+	                <div class="col-md-3 col-sm-3 col-xs-4 n_e_img">
+	                    <img src="{{ $base_url }}asset/job/n_e_img_1.jpg" alt="n_e_img_1.jpg">
+	                </div>
+	                <div class="col-md-9 col-sm-9 col-xs-8 n_e_dis">
+	                    <h4><a href="#">7 Management Traits</a></h4>
+	                    <p>7 Management Traits That Will Help Retaint Talented Employees </p>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="big_spacer"></div>
+
+	<div class="row hot_jobs">
+	    <div class="col-md-12 col-sm-12 col-xs-12">
+	        <h4>Hot Jobs</h4>
+	    </div>
+	</div>
+
+	@include('job.partial.featured_job')
+</div>
+
+@stop
+
+
+@section('style')
+<style>
+.job_option .row .c_w_job ul {
+  padding-left: 0 !important;
+}
+.tab-content > .tab-pane > div {
+  padding-left: 0 !important;
+}
+.nav-tabs > li > a {
+  border: 1px solid transparent;
+  line-height: 1.42857;
+  margin-right: 2px;
+  border-radius:0;
+}
+.footer-list li a{
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 32px;
+	color: #fff;
+}
+</style>
+@stop
+
+@section('script')
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#jobTab a').click(function (e) {
+	  e.preventDefault()
+	  $(this).tab('show')
+	})
+});
+</script>
+@stop

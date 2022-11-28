@@ -1,0 +1,86 @@
+@import url(https://www.google.com/fonts#UsePlace:use/Collection:Roboto:400,400italic,500,500italic,700,700italic,300italic,300,100italic,100,900);
+@font-face {
+  font-family: banglaFonts;
+  src: url("../fonts/Siyamrupali.ttf"); }
+
+html, body {
+  font-family: "Roboto", sans-serif, banglaFonts;
+  font-size: 14px;
+  font-weight: 300;
+  color: #444;
+  /*background: #FAEDCB;*/
+}
+.main{
+	margin-top: 20px;
+}
+.offer-right{
+	background: #fff;
+	/*padding-top: 15px;*/
+	padding-left:15px;
+	padding-right: 15px;
+}
+.footer-social {
+  /*color: #fff !important;*/
+  float: left;
+  margin: 0 12px 12px 0;
+}
+.footer-social .social-facebook, .footer-social .social-youtube, .footer-social .social-twitter, .footer-social .social-gplus, .footer-social .social-linkedin {
+  box-shadow: 2px 2px 2px #ccc;
+  color: #fff;
+  margin-right: 5px;
+}
+.footer-social .social-facebook:hover,.footer-social .social-youtube:hover,.footer-social .social-twitter:hover,.footer-social .social-gplus:hover,.footer-social .social-linkedin:hover {
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.16) inset;
+}
+.footer-social .social-facebook {
+  background-color: #3b5998;
+}
+.footer-social .social-youtube {
+  background: #cc181e none repeat scroll 0 0;
+}
+.footer-social .social-twitter {
+  background: #29c8fc none repeat scroll 0 0;
+}
+.footer-social .social-gplus {
+  background: #d5422d none repeat scroll 0 0;
+}
+.footer-social .social-linkedin {
+  background: #0073b2 none repeat scroll 0 0;
+}
+
+ul.list-feature{
+	margin-left:-45px;
+	margin-top: 30px;
+	/*list-style-image: url('../img/list-icon.png') !important;*/
+}
+.list-feature li{
+	list-style: none;
+	line-height: 40px;
+	background: url('../img/list-icon.png') no-repeat;
+	padding-left:45px;
+}
+
+.txt-plain{
+	box-shadow: none;
+	border:1px solid #f5f5f5;
+}
+
+.mobile-header{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #075095;
+  text-align: center;
+}
+
+.mobile-header h2{
+  color: #fff;
+}
+.mobile-header h4{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color:#fff;
+  background: #009ACC;
+}
+.mobile-header h3{
+  color:#fff;
+}
