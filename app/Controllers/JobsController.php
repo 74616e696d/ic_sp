@@ -8,6 +8,7 @@ class JobsController extends BaseController
 
     public function index()
     {
+        
         $jobCategories = [];
         return $this->render('job.list', [
             'jobCategories' => $jobCategories
