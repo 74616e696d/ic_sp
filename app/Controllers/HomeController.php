@@ -22,7 +22,7 @@ class HomeController extends BaseController
     {
         //parent::__construct();
         $this->Job = new Job_model();
-	$this->Dashboard_model = new Dashboard_model();
+	    $this->Dashboard_model = new Dashboard_model();
         $this->Ref_text_model = new Ref_text_model();
         $this->Exam_model = new Exam_model();
         $this->Model_test_model = new Model_test_model();
@@ -39,7 +39,7 @@ class HomeController extends BaseController
 
     public function index()
     {
-        $data = [];
+         $data = [];
 		 $data['jobs']=$this->Job->get_recent_jobs(3);
 		 $data['student_jobs']=$this->Job->student_jobs(3);
 		// //get online user statistics

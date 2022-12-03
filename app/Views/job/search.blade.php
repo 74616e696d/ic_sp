@@ -1,6 +1,7 @@
 @extends('job.front_master.master')
 
 @section('content')
+
 <section class="box-wrapper">
     <div class="wrapper-counts-job-box">
         <div class="container-fluid">
@@ -21,7 +22,7 @@
                                                 <li>
                                                     <span>
                                                         <span class="job-count">
-                                                           {{ count($jobs) }}
+                                                           {{-- {{ count($jobs) }} --}}
                                                         </span>
                                                         Jobs
                                                     </span>
@@ -54,6 +55,7 @@
                                 </div>
                                 <div id="job-excerpt">
                                      @if($jobs)
+                                     
                                       @foreach($jobs as $row)
                                           <?php 
                                             $com_id=!empty($row->com_info)?$row->com_info:0;

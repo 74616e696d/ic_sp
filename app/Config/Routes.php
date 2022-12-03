@@ -41,6 +41,7 @@ $routes->post('/login', 'AuthController::login');
 // Jobs
 $routes->get('job/job_list', 'JobsController::index');
 $routes->get('job/job_list/cv', 'JobsController::cv');
+$routes->post('job/job_list/search', 'JobsController::search');
 
 // News
 $routes->get('current_news', 'NewsController::index');

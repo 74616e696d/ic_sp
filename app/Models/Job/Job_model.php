@@ -10,7 +10,7 @@ class Job_model extends Model {
 	{
 		parent::__construct();
 		$this->db ='job_list';
-                $this->database = \Config\Database::connect();;
+        $this->database = \Config\Database::connect();;
 	}
 
 	/**
@@ -121,12 +121,15 @@ class Job_model extends Model {
 
 	function job_search($term='',$start=0,$limit=1000)
 	{
-		$this->db->like('tags',$term);
-		$this->db->or_like('title',$term);
-		$this->db->or_like('post_name',$term);
-		$this->db->where('is_published',1);
-		$qry=$this->db->get('job_list');
-		if($qry->num_rows()>0)
+		$db = \Config\Database::connect();
+$builder = $db->table('job_list');
+		// $this->db->like('tags',$term);
+		// $this->db->or_like('title',$term);
+		// $this->db->or_like('post_name',$term);
+		// $this->db->where('is_published',1);
+		$qry=$builder->like('tags',$term)->orLike('title',$term)->orLike('post_name',$term)->where('is_published',1);
+		// echo"<pre>";print_r($qry);exit;
+		if($qry->countAllResults()>0)
 		{
 			return $qry->result();
 		}
@@ -172,20 +175,22 @@ class Job_model extends Model {
 
 	function job_by_category()
 	{
-		$sql="SELECT jc.id,jc.title,(SELECT COUNT(jl.id) FROM job_list jl WHERE jl.is_published = 1 AND jl.job_cat=jc.id) AS total FROM job_category jc";
-		$qry=$this->db->query($sql);
-		if($qry->num_rows()>0)
+		// $sql="SELECT jc.id,jc.title,(SELECT COUNT(jl.id) FROM job_list jl WHERE jl.is_published = 1 AND jl.job_cat=jc.id) AS total FROM job_category jc";
+		// $qry=$this->db->query($sql);
+		$db = db_connect();
+		$qry=$db->query("SELECT jc.id,jc.title,(SELECT COUNT(jl.id) FROM job_list jl WHERE jl.is_published = 1 AND jl.job_cat=jc.id) AS total FROM job_category jc");
+		if($qry->getNumRows()>0)
 		{
-			return $qry->result();
+			return $qry->getResult();
 		}
 		return false;
 	}
 
 	function job_by_location()
 	{
-		$sql="SELECT COUNT(id) as total,location FROM job_list WHERE is_published = 1 and location IS NOT NULL  GROUP BY location";
-		$qry=$this->db->query($sql);
-		if($qry->num_rows()>0)
+		$db = db_connect();
+		$qry=$db->query("SELECT COUNT(id) as total,location FROM job_list WHERE is_published = 1 and location IS NOT NULL  GROUP BY location");
+		if($qry->getNumRows()>0)
 		{
 			return $qry->result();
 		}
@@ -205,9 +210,11 @@ class Job_model extends Model {
 
 	function job_by_deadline()
 	{
-		$sql="select * from job_list where is_published=1 and deadline=DATE_ADD(CURDATE(),INTERVAL 1 DAY)";
-		$qry=$this->db->query($sql);
-		if($qry->num_rows()>0)
+		// $sql="select * from job_list where is_published=1 and deadline=DATE_ADD(CURDATE(),INTERVAL 1 DAY)";
+		// $qry=$this->db->query($sql);
+		$db = db_connect();
+		$qry=$db->query("select * from job_list where is_published=1 and deadline=DATE_ADD(CURDATE(),INTERVAL 1 DAY)");
+		if($qry->getNumRows()>0)
 		{
 			return $qry->result();
 		}
@@ -217,9 +224,12 @@ class Job_model extends Model {
 	function get_featured_job()
 	{
 		$today= date('y-m-d');
-		$sql="select jl.*,c.company_name,c.logo from job_list jl join company_info c  on jl.com_info=c.id where jl.is_featured=1 and jl.is_published=1 and DATE(jl.deadline) > DATE(NOW()) order by jl.id desc";
-		$qry=$this->db->query($sql);
-		if($qry->num_rows()>0)
+		// $sql="select jl.*,c.company_name,c.logo from job_list jl join company_info c  on jl.com_info=c.id where jl.is_featured=1 and jl.is_published=1 and DATE(jl.deadline) > DATE(NOW()) order by jl.id desc";
+		// $qry=$this->db->query($sql);
+		$db = db_connect();
+		$qry=$db->query("select jl.*,c.company_name,c.logo from job_list jl join company_info c  on jl.com_info=c.id where jl.is_featured=1 and jl.is_published=1 and DATE(jl.deadline) > DATE(NOW()) order by jl.id desc");
+		
+		if($qry->getNumRows() > 0)
 		{
 			return $qry->result();
 		}
@@ -228,9 +238,11 @@ class Job_model extends Model {
 
 	function get_student_jobs()
 	{
-		$sql="select jl.*,c.company_name,c.logo from job_list jl join company_info c  on jl.com_info=c.id where jl.job_nature='Student' and jl.is_published=1";
-		$qry=$this->db->query($sql);
-		if($qry->num_rows()>0)
+		// $sql="select jl.*,c.company_name,c.logo from job_list jl join company_info c  on jl.com_info=c.id where jl.job_nature='Student' and jl.is_published=1";
+		// $qry=$this->db->query($sql);
+		$db = db_connect();
+		$qry=$db->query("select jl.*,c.company_name,c.logo from job_list jl join company_info c  on jl.com_info=c.id where jl.job_nature='Student' and jl.is_published=1");
+		if($qry->getNumRows()>0)
 		{
 			return $qry->result();
 		}

@@ -25,7 +25,7 @@
                         </p>
                     </div>
                     <div class="job-search">
-                        <form class="form-horizontal" target="_blank" action="{{ $base_url }}job/job_list/search" id="job-search" method="post">
+                        <form class="form-horizontal" target="_blank" action="{{ $base_url }}job_list/search" id="job-search" method="post">
                             <div class="col-md-3 col-sm-3 col-xs-3">
                             </div>
                             <div class="col-md-5 col-sm-5 col-xs-5">
