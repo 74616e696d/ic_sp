@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://hello.iconpreparation.com/';
+    public $baseURL = 'http://hello.iconpreparation.com/iconprep/';
 
     /**
      * --------------------------------------------------------------------------
@@ -56,7 +56,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $uriProtocol = 'REQUEST_URI';
+    public $uriProtocol = 'PATH_INFO';
 
     /**
      * --------------------------------------------------------------------------
