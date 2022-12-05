@@ -145,7 +145,8 @@ class PublicController extends BaseController
 							$this->session->setFlashdata('success', "ধন্যবাদ ! আইকনপ্রিপ্যারাশন এ রেজিস্ট্রেশন সফল হয়েছে। <br/>
 দয়া করে লগইন করুন");
 
-							redirect(base_url().'/login/index/1');
+							redirect(base_url().'/');
+							/* redirect(base_url().'/login/index/1'); */
 						}//end success section
 						else
 						{
