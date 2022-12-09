@@ -3,7 +3,7 @@ namespace App\Models\Exam;
 use CodeIgniter\Model;
 
 
-class Choosen_category_model extends Model {
+class ChoosenCategoryModel extends Model {
     protected $allowedFields = ['user_id', 'exam_cat', 'status', 'request_date', 'expiry_date'];
 	function __construct()
 	{
@@ -93,17 +93,20 @@ class Choosen_category_model extends Model {
 	}
 	function get_choosen($uid)
 	{
+		//$this->db->where('user_id',$uid);
+		//$qry = $this->db->get('choosen_exam_cat');
+		
 		return $this->db->table('choosen_exam_cat')->where('user_id',$uid)
 		->where('status !=','0')->get()->getResultObject();
 		//$qry = $;
-		/*if($qry->num_rows()>0)
+		if($qry->num_rows()>0)
 		{
-			return $qry->getR();
+			return $qry->row();
 		}
 		else
 		{
 			return false;
-		}*/
+		}
 	}
 	function choosen_count_key($key)
 	{

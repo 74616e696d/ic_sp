@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://hello.iconpreparation.com/iconprep/';
+    public $baseURL = 'http://103.191.240.143/iconprep/';
 
     /**
      * --------------------------------------------------------------------------

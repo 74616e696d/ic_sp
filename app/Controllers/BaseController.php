@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use Illuminate\View\Factory as View;
 
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;

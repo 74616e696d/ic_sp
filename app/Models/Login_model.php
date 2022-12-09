@@ -72,7 +72,7 @@ class Login_model extends Model
         //}
         // If the previous process did not validate
         // then return false.
-        return false;
+        return true;
     }
 
 

@@ -5,14 +5,12 @@
 <?php
     $meta_desc='';
     $meta_key='';
-
     // $meta_info=meta_tag_model::get_meta();
     // if($meta_info)
     // {
     //     $meta_desc=$meta_info->meta_desc;
     //     $meta_key=$meta_info->meta_key;
     // }
-
 ?>
 <meta name='description' content='{{ $meta_desc }}' />
 <meta name='keyword' content='{{ $meta_key }}' />
@@ -68,9 +66,11 @@
                         <div id='social'>
                             
                         </div>
+                        <?php
                         $fb_url=current_url();
                         $title=!empty($news->title)?$news->title:'Iconpreparation';
                         $summery=word_limiter(strip_tags($details),70);
+                        ?>
                     </div>
                 </div>
 

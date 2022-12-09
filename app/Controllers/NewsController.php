@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Services\CurrentNewService;
 use App\Services\ForumService;
 use Illuminate\View\Factory as View;
+use App\Models\Current_news_category_model;
 
 class NewsController extends BaseController
 {

@@ -9,8 +9,8 @@ use App\Models\Exam_model;
 use App\Models\Model_test_model;
 use App\Models\Upcoming_test_model;
 use App\Models\Current_news_model;
-use App\Models\Events_model;
 use App\Models\forum\Frm_post_model;
+use App\Models\Events_model;
 
 
 use Slug;

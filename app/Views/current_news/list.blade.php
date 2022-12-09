@@ -12,7 +12,7 @@
 					$data=['title'=>$cat->name];
 					$cat_slug=$ci->slug->create_uri($data,1);
 				 ?>
-				<li><a href="{{$base_url}}news/{{$cat_slug}}">{{$cat->name}}</a></li>
+				<li><a href="{{$base_url}}news/{{$cat_slug}}">{{ $cat->name }}</a></li>
 				@endforeach
 			@endif
 		</ul>
@@ -22,7 +22,7 @@
 		<img height="180px" src="{{$base_url}}asset/news/{{$featured->feature_img}}" alt="Current News">
 		<div class="cat-title">
 			<span>
-				{{current_news_category_model::get_text($featured->category_id)}}
+				{{ current_news_category_model::get_text($featured->category_id) }}
 			</span>
 		</div>
 		<h3 class='news-title'>
@@ -30,8 +30,8 @@
 		</h3>
 		<div class="news-date">
 		<?php
-		$dt=date_create($featured->post_date);
-		$dtf=date_format($dt,'M d,Y');
+		    $dt=date_create($featured->post_date);
+		    $dtf=date_format($dt,'M d,Y');
 		?>
 		{{$dtf}}
 		</div>

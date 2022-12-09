@@ -29,9 +29,6 @@
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 no-pad-left">
                             <h4><a title="" href="{{$base_url}}news/details/{{$slug}}/{{$row->id}}">{{ $row->title }}</a></h4>
-
-                      
-
                             <p class="n_c_date">{{ date_short($row->post_date) }}</p>
                             <?php $striped_desc=strip_tags($row->short_desc,'<img><a>'); ?>
                             <p class='category-details'><a href="{{$base_url}}news/details/{{$slug}}/{{$row->id}}">{{ $striped_desc }}</a></p>
@@ -40,12 +37,12 @@
                             </p>
                         </div>
                         @if($indx==1)
-                        {{-- <div class="spacer-bottom"></div>
+                        <div class="spacer-bottom"></div>
                         <div class="row auto_mar">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-pad-left no-pad-right">
                                 <img src="{{ $base_url }}asset/frontend/img/ad11.jpg" class="img-responsive" alt="#">
                             </div>
-                        </div> --}}
+                        </div> 
                         <div class="spacer-bottom"></div>
                         @endif
                     </div>

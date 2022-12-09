@@ -43,8 +43,10 @@
                 <div class="row date_category">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 c">
                         <p>
-                        $category=current_news_category_model::get_text($row->category_id);
-                        $category_international=$ci->slug->create_slug($category,1); 
+                        <?php 
+                        /* $category=current_news_category_model::get_text($row->category_id); */
+                        /* $category_international=$ci->slug->create_slug($category,1); */ 
+                        ?>
                         <a href="/news/categorized/{{ $row->category_id }}/{{ $category_international }}"><span class="category">{{$category}}</span></a>
                         </p>
                     </div>
@@ -84,9 +86,11 @@
                 <div class="row date_category">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 c">
                         <p>
-                        $category=current_news_category_model::get_text($row->category_id);
+                        <?php
+                        $category=Current_news_category_model::get_text($row->category_id);
                         $category_national=$ci->slug->create_slug($category,1); 
-                        <a href="/current_news/categorized/{{ $row->category_id }}/{{ $category_national }}"><span class="category">{{$category}}</span></a>
+?>
+                        <a href="/current_news/categorized/{{ $row->category_id }}/{{ $category_national }}"><span class="category">{{ $category }}</span></a>
                         </p>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d">

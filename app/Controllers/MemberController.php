@@ -4,7 +4,7 @@ namespace App\Controllers;
 use Illuminate\View\Factory as View;
 use App\Models\Membership_model;
 use App\Models\User_model;
-use App\Models\Exam\Choosen_category_model;
+use App\Models\Exam\ChoosenCategoryModel;
 use App\Models\Ref_text_model;
 use App\Models\Dashboard_model;
 use App\Models\member\Result_model;
@@ -33,15 +33,15 @@ class MemberController extends BaseController
         $this->creationDate = $this->session->get('creation_date');
         $this->username = $this->session->get('username');
         $this->userid = $this->session->get('userid');
-        if(!$this->userid)
+        if(is_null($this->userid))
         {
-            return redirect()->to(base_url());
-            exit;
+			header('Location: '.base_url());
+			exit(); 
         }
-        
+       
         $this->utype = $this->session->get('utype');
         
-        $this->choosenCategoryModel = new Choosen_category_model();
+        $this->ChoosenCategoryModel = new ChoosenCategoryModel();
         $this->refTextModel = new Ref_text_model();
         $this->dashboard_model = new Dashboard_model();
         $this->userModel = new User_model();
@@ -168,7 +168,7 @@ class MemberController extends BaseController
     
     function get_sel_choosen()
     {
-        $choosen = $this->choosenCategoryModel->get_choosen($this->userid);
+        $choosen = $this->ChoosenCategoryModel->get_choosen($this->userid);
         $str='';
         if($choosen)
         {
@@ -543,8 +543,9 @@ class MemberController extends BaseController
         //{
         
         $category = $this->refTextModel->where('group_id', 2)->get()->getResultObject();
+		
             foreach ($category as $c) {
-                $has=$this->choosenCategoryModel->exists($this->userid,$c->id);
+                $has=$this->ChoosenCategoryModel->exists($this->userid,$c->id);
                 if(!$has)
                 {
                     $expiry=date_create('2025-07-21 05:49:37');
@@ -555,7 +556,7 @@ class MemberController extends BaseController
                         'request_date'=>date('Y-m-d H:i:s'),
                         'expiry_date'=>$expiry_date
                         );
-                    $this->choosenCategoryModel->insert($data);
+                    $this->ChoosenCategoryModel->insert($data);
                 }
             }
         //}
