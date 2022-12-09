@@ -77,7 +77,7 @@ $routes->get('member/model_quiz_progress', 'Member\ModelQuizProgressController::
 $routes->get('report/strength_report', 'Report\StrengthReportController::index');
 $routes->post('report/strength_report', 'Report\StrengthReportController::index');
 $routes->get('member/days_hints', 'Member\DaysHintsController::index');
-
+$routes->get('admin/dashboard', '');
 service('auth')->routes($routes);
 
 /*
