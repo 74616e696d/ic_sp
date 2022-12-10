@@ -27,7 +27,7 @@ class HomeController extends BaseController
         $this->Exam_model = new Exam_model();
         $this->Model_test_model = new Model_test_model();
         $this->Upcoming_test_model= new Upcoming_test_model();
-        $this->Current_news = new Current_news_model();
+        $this->Current_news_model = new Current_news_model();
         $this->Events_model = new Events_model();
         $this->Frm = new Frm_post_model();
         
@@ -78,7 +78,7 @@ class HomeController extends BaseController
 		 $data['next_govt_exam']=$this->Upcoming_test_model->where('category','833')->get()->getResultArray();
 		 $data['next_teachers_exam']=$this->Upcoming_test_model->where('category','713')->get()->getResultArray();
 		 $data['next_mba_exam']=$this->Upcoming_test_model->where('category','680')->get()->getResultArray();
-		 $data['top_news']=$this->Current_news->get_news(2);
+		 $data['top_news']=$this->Current_news_model->get_news(2);
 		 $data['todays_class']=$this->Events_model->get_ongoing_event(3);
 		 $data['forum']=$this->Frm->top_post(4);
 		 $data['total_prev_count']=$this->Ref_text_model->total_prev_exams();
