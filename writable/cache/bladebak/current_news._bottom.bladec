@@ -1,0 +1,259 @@
+<div class="row">
+ 
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+ <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+ <!-- STARTS SPORTS -->
+ <?php if(isset($sports) && $sports): ?>
+ <?php $__currentLoopData = $sports; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $row): $loop = $this->incrementLoopIndices();  ?>
+ <?php $sports_slug=$ci->slug->create_slug($row->title,1); ?>
+ <div class="row ">
+ <div class="bsdo_8">
+ <div class="bdr">
+ <div class="row">
+ <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+ <div class="m_h">
+ <h4><a title="" href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($sports_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?></a></h4>
+ <div class=" hover01 column">
+ <?php
+ $img_sports=$base_url.'asset/news/'.$row->feature_img;
+ if(file_exists('asset/news/'.$row->feature_img))
+ {
+ $img_sports=$base_url.'asset/news/'.$row->feature_img;
+ }
+ ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($sports_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><figure><img style="max-height:205px;margin:0 auto;" alt="<?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?>" src="<?php echo \htmlentities($img_sports??'', ENT_QUOTES, 'UTF-8', false); ?>" class="img-responsive "></figure></a>
+ </div>
+ <?php $striped_desc_sports=strip_tags($row->short_desc,'<img><a>'); ?>
+ <p><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($sports_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities(word_limiter($striped_desc_sports,35,'...')??'', ENT_QUOTES, 'UTF-8', false); ?></a></p>
+ </div>
+ </div>
+ </div>
+ <div class="row date_category">
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 c">
+ <p>
+ <?php 
+ $category=current_news_category_model::get_text($row->category_id);
+ $category_sports=$ci->slug->create_slug($category,1); 
+ ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/categorized/<?php echo \htmlentities($row->category_id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($category_sports??'', ENT_QUOTES, 'UTF-8', false); ?>"><span class="category"><?php echo \htmlentities($category??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ </p>
+ </div>
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d">
+ <p><span class="date"><i class="fa fa-calendar"></i><?php echo \htmlentities(date_short($row->post_date)??'', ENT_QUOTES, 'UTF-8', false); ?></span></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="spacer"></div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+ <!--  END SPORTS -->
+
+ <!-- START AWARDS -->
+ <?php if(isset($awards) && $awards): ?>
+ <?php $__currentLoopData = $awards; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $row): $loop = $this->incrementLoopIndices();  ?>
+ <?php $awards_slug=$ci->slug->create_slug($row->title,1); ?>
+ <div class="row ">
+ <div class="bsdo_8">
+ <div class="bdr">
+ <div class="row news-content">
+ <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+ <div class="m_h">
+ <h4><a title="" href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($awards_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?></a></h4>
+ <div class=" hover01 column">
+ <?php
+ $img_awards=$base_url.'asset/news/'.$row->feature_img;
+ if(file_exists('asset/news/'.$row->feature_img))
+ {
+ $img_awards=$base_url.'asset/news/'.$row->feature_img;
+ }
+ ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($awards_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><figure><img style="max-height:205px;margin:0 auto;" alt="<?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?>" src="<?php echo \htmlentities($img_awards??'', ENT_QUOTES, 'UTF-8', false); ?>" class="img-responsive "></figure></a>
+ </div>
+ <?php $striped_desc_awards=strip_tags($row->short_desc,'<img><a>'); ?>
+ <p><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($awards_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities(word_limiter($striped_desc_awards,35,'...')??'', ENT_QUOTES, 'UTF-8', false); ?></a></p>
+ </div>
+ </div>
+ </div>
+ <div class="row date_category">
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 c">
+ <p>
+ <?php 
+ $category=current_news_category_model::get_text($row->category_id);
+ $category_awards=$ci->slug->create_slug($category,1); 
+ ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/categorized/<?php echo \htmlentities($row->category_id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($category_awards??'', ENT_QUOTES, 'UTF-8', false); ?>"><span class="category"><?php echo \htmlentities($category??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ </p>
+ </div>
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d">
+ <p><span class="date">
+ <i class="fa fa-calendar"></i><?php echo \htmlentities(date_short($row->post_date)??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="spacer"></div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+ <!-- END AWARDS -->
+ </div>
+
+ <!-- START BUSINESS -->
+ <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 space ">
+ <div class="bsdo_10">
+ <div class="bdr">
+ <?php if(isset($business) && $business): ?>
+ <?php $__currentLoopData = $business; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $row): $loop = $this->incrementLoopIndices();  ?>
+ <?php $business_slug=$ci->slug->create_slug($row->title,1); ?>
+ <div class="row">
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+ <div class="pa_la_height">
+ <h4><a title="" href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($business_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a></h4>
+ <div class="b_s hover01 column">
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($business_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <figure>
+ <img alt="<?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?>" src="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>asset/news/<?php echo \htmlentities($row->feature_img??'', ENT_QUOTES, 'UTF-8', false); ?>" class="img-responsive" style="max-height:250px">
+ </figure>
+ </a>
+ </div>
+ <?php $striped_desc_business=strip_tags($row->details,'<img><a>'); ?>
+ <p><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($business_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php echo \htmlentities(word_limiter($striped_desc_business,35,'..')??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a></p>
+ </div>
+ </div>
+ </div>
+ <div class="row date_category">
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 c">
+ <p>
+ <?php 
+ $category=current_news_category_model::get_text($row->category_id);
+ $category_business=$ci->slug->create_slug($category,1); 
+ ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/categorized/<?php echo \htmlentities($row->category_id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($category_business??'', ENT_QUOTES, 'UTF-8', false); ?>"><span class="category"><?php echo \htmlentities($category??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ </p>
+ </div>
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d">
+ <p><span class="date"><i class="fa fa-calendar"></i><?php echo \htmlentities(date_short($row->post_date)??'', ENT_QUOTES, 'UTF-8', false); ?></span></p>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+ </div>
+ </div>
+ </div>
+ <!-- END BUSINESS -->
+
+ 
+ <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+
+ <!-- START SCIENCE -->
+ <?php if(isset($science) && $science): ?>
+ <?php $__currentLoopData = $science; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $row): $loop = $this->incrementLoopIndices();  ?>
+ <?php $science_slug=$ci->slug->create_slug($row->title,1); ?>
+ <div class="row ">
+ <div class="bsdo_11">
+ <div class="bdr">
+ <div class="row news-content">
+ <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+ <div class="m_h">
+ <h4><a title="" href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($science_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?></a></h4>
+ <div class=" hover01 column">
+ <?php
+ $img_science=$base_url.'asset/news/'.$row->feature_img;
+ if(file_exists('asset/news/small/'.$row->feature_img))
+ {
+ $img_science=$base_url.'asset/news/small/'.$row->feature_img;
+ }
+ ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($science_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><figure><img style="max-height:205px;margin:0 auto;" alt="<?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?>" src="<?php echo \htmlentities($img_science??'', ENT_QUOTES, 'UTF-8', false); ?>" class="img-responsive "></figure></a>
+ </div>
+ <?php $striped_desc_science=strip_tags($row->short_desc,'<img><a>'); ?>
+ <p><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($science_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities(word_limiter($striped_desc_science,35,'..')??'', ENT_QUOTES, 'UTF-8', false); ?></a></p>
+ </div>
+ </div>
+ </div>
+ <div class="row date_category">
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 c">
+ <p>
+ <?php 
+ $category=current_news_category_model::get_text($row->category_id);
+ $category_science=$ci->slug->create_slug($category,1); 
+ ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/categorized/<?php echo \htmlentities($row->category_id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($category_science??'', ENT_QUOTES, 'UTF-8', false); ?>"><span class="category"><?php echo \htmlentities(current_news_category_model::get_text($row->category_id)??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ </p>
+ </div>
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d">
+ <p><span class="date"><i class="fa fa-calendar"></i><?php echo \htmlentities(date_short($row->post_date)??'', ENT_QUOTES, 'UTF-8', false); ?></span></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="spacer"></div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+ <!-- END SCIENCE -->
+
+ <!-- START SUMMITS -->
+ <?php if(isset($summits) && $summits): ?>
+ <?php $__currentLoopData = $summits; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $row): $loop = $this->incrementLoopIndices();  ?>
+ <?php $summits_slug=$ci->slug->create_slug($row->title,1); ?>
+ <div class="row ">
+ <div class="bsdo_11">
+ <div class="bdr">
+ <div class="row news-content">
+ <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+ <div class="m_h">
+ <h4><a title="" href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($summits_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?></a></h4>
+ <div class=" hover01 column">
+ <?php
+ $img_summits=$base_url.'asset/news/'.$row->feature_img;
+ if(file_exists('asset/news/'.$row->feature_img))
+ {
+ $img_summits=$base_url.'asset/news/'.$row->feature_img;
+ }
+ ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($summits_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><figure><img style="max-height:205px;margin:0 auto;" alt="<?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?>" src="<?php echo \htmlentities($img_summits??'', ENT_QUOTES, 'UTF-8', false); ?>" class="img-responsive "></figure></a>
+ </div>
+ <?php $striped_desc_summits=strip_tags($row->short_desc,'<img><a>'); ?>
+ <p><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/details/<?php echo \htmlentities($summits_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities(word_limiter($striped_desc_summits,35,'..')??'', ENT_QUOTES, 'UTF-8', false); ?></a></p>
+ </div>
+ </div>
+ </div>
+ <div class="row date_category">
+ <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 c">
+ <p>
+ <?php 
+ $category=current_news_category_model::get_text($row->category_id);
+ $category_summits=$ci->slug->create_slug($category,1); 
+ ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>news/categorized/<?php echo \htmlentities($row->category_id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($category_summits??'', ENT_QUOTES, 'UTF-8', false); ?>"><span class="category"><?php echo \htmlentities($category??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ </p>
+ </div>
+ <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 d">
+ <p><span class="date"><i class="fa fa-calendar"></i><?php echo \htmlentities(date_short($row->post_date)??'', ENT_QUOTES, 'UTF-8', false); ?></span></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="spacer"></div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+ <!-- END SUMMITS -->
+ </div>
+ </div>
+</div>

@@ -1,0 +1,44 @@
+<?php if(isset($student_jobs) && $student_jobs): ?>
+<div class="row">
+ <?php
+ $ttl=count($student_jobs);
+ $max_columns=4;
+ $lines=ceil($ttl/$max_columns);
+ ?>
+ <?php for($i = 0; $i < $ttl; $i ++): ?>
+ <div class="col-md-3 col-sm-6 col-xs-12">
+ <div class="hot-box">
+ <?php 
+ $com_id=!empty($student_jobs[$i]->com_info)?$student_jobs[$i]->com_info:0;
+ $company=Company_model::get_company_info($com_id);
+ $logo=$company?$company->logo:'';
+ ?>
+ <?php if(!empty($logo) && is_file_exist($logo)): ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>job/job_list/single/<?php echo \htmlentities($student_jobs[$i]->id??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img alt="<?php echo \htmlentities($student_jobs[$i]->post_name??'', ENT_QUOTES, 'UTF-8', false); ?>" src="<?php echo \htmlentities($logo??'', ENT_QUOTES, 'UTF-8', false); ?>" width="56"></img>
+ </a>
+ <?php else: ?>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>job/job_list/single/<?php echo \htmlentities($student_jobs[$i]->id??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img alt="<?php echo \htmlentities($student_jobs[$i]->post_name??'', ENT_QUOTES, 'UTF-8', false); ?>" src="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>asset/frontend/img/blank_logo.png" width="56"></img>
+ </a>
+ <?php endif; ?>
+ <h2>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>job/job_list/single/<?php echo \htmlentities($student_jobs[$i]->id??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php echo \htmlentities($student_jobs[$i]->company_name??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a>
+ </h2>
+ <p>
+ <?php echo \htmlentities($student_jobs[$i]->post_name??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <br>
+ No Of Vacancy (<?php echo \htmlentities($student_jobs[$i]->vacancy_no>0?$student_jobs[$i]->vacancy_no:0??'', ENT_QUOTES, 'UTF-8', false); ?>)
+ </br>
+ </p>
+ </div>
+ </div>
+ <?php endfor; ?>
+</div>
+<?php else: ?>
+<p style='text-align:center;font-size:17px;padding-top:10px;padding-bottom:10px;'>No Student Job Available Now</p>
+<?php endif; ?>

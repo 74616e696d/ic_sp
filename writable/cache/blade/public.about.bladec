@@ -1,0 +1,21 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('content'); ?>
+<div class='container about' style='min-height:350px;padding-top:25px;line-height:28px;'>
+	<h4>ABOUT US</h4>
+	<p>Iconpreparation is an online based unique means of education. Getting job has become nearly impossible without proper use of time. Amid all the proper use of technology StudyPress’s sole aim is to go one step forward.</p>
+</div>
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('style'); ?>
+<style>
+.about h4{
+
+}
+.about p{
+	font-size: 16px;
+	line-height: 30px;
+}
+</style>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('front_master.master'); } ?>

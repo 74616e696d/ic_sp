@@ -1,0 +1,67 @@
+<aside class="left-side sidebar-offcanvas">
+ <!-- sidebar: style can be found in sidebar.less -->
+ <section class="sidebar">
+ <!-- Sidebar user panel -->
+ <div class="user-panel">
+ <div class="pull-left image">
+ <img height="215" width="215" src="<?php echo \htmlentities($user_img??'', ENT_QUOTES, 'UTF-8', false); ?>" class="img-circle" alt="User Image" />
+ </div>
+ <div class="pull-left info">
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/account_setting">
+ <p style="font-size:14px"><?php if($username): ?><?php echo \htmlentities($username??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?></p>
+ </a>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/account_setting"><i class="fa fa-circle text-success"></i> Online</a>
+ </div>
+ </div>
+
+ <ul class="sidebar-menu">
+ <li class="active">
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/dashboard">
+ <i class="menu-icon dashboard"></i> <span>User Panel</span>
+ </a>
+ </li>
+
+ 
+
+ 
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/practice_subject_list" title="Study Materials and Chapter wise all questions"><i class="menu-icon practice"></i><span>Read &amp; Practice</span></a></li>
+ <li>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/take_exam">
+ <i class="menu-icon take-exam"></i> <span>Previous Job Test</span>
+ </a>
+ </li>
+ <li>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/model_test">
+ <i class="menu-icon model"></i> <span>Model Test</span>
+ </a>
+ </li>
+ <li>
+ <a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/current_world">
+ <i class="menu-icon current-world"></i> <span>Current Affairs</span>
+ </a>
+ </li>
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/mistake_list" title="Your All Mistakes"><i class="menu-icon mistake"></i><span>Mistake List</span>  <span class='badge badge-danger'><?php echo \htmlentities($user_total_mistake??'', ENT_QUOTES, 'UTF-8', false); ?></span></a></li>
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/review_list" title="Questions You found Difficult"><i class="menu-icon review"></i><span>Review List</span>  <span class='badge badge-info'><?php echo \htmlentities($user_total_review??'', ENT_QUOTES, 'UTF-8', false); ?></span></a></li>
+
+ <li class="submenu"> 
+ <a href="#rpt-menu" data-toggle="collapse"><span class='menu-icon report'></span>My Statistics &nbsp;&nbsp;<i class="fa fa-angle-down fa-clps"></i></a>
+ <ul id='rpt-menu' class="collapse">
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/progress_overview" title= "Your Test Statistics"><i class="menu-icon progress-view" ></i><span>Exam Report</span></a></li>
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/chapter_progress" title="Your Study Statistics"><i class="menu-icon study" ></i><span>Quiz Result</span></a></li>
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/model_quiz_progress" title="Your Study Statistics"><i class="menu-icon model-test" ></i><span>Model Test Result</span></a></li>
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/report/strength_report" title="Your Strong &amp; Weak Zone"><i class="menu-icon comparison" ></i><span>Strength Comparison</span></a></li>
+ </ul>
+ </li>
+ 
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/days_hints"><i class="menu-icon hints"></i><span>Important Rules</span></a></li>
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/member/cvtemplate"><i class="fa fa-paperclip"></i>
+ <span>CV Writing Tips</span>
+ <span class='badge' style='background: red'>New</span>
+ </a></li>
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/current_news"><i class="menu-icon hints"></i><span>Current News</span></a></li>
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/forum/forum/posts"><i class="menu-icon hints"></i><span>Iconpreparation Forum</span></a></li>
+ <li><a href="<?php echo \htmlentities($base_url??'', ENT_QUOTES, 'UTF-8', false); ?>/login/sign_out"><i class="fa fa-sign-out"></i><span>Sign Out</span></a></li>
+ </ul>
+ </section>
+ <!-- /.sidebar -->
+</aside>

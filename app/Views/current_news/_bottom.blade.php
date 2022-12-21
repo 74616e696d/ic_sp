@@ -24,7 +24,7 @@
                                         <a href="{{$base_url}}news/details/{{$sports_slug}}/{{$row->id}}"><figure><img style="max-height:205px;margin:0 auto;" alt="{{ $row->title }}" src="{{ $img_sports }}" class="img-responsive "></figure></a>
                                         </div>
                                         <?php $striped_desc_sports=strip_tags($row->short_desc,'<img><a>'); ?>
-                                        <p><a href="{{$base_url}}news/details/{{$sports_slug}}/{{$row->id}}">{{ word_limiter($striped_desc_sports,35,'...') }}</a></p>
+                                        <p><a href="{{$base_url}}news/details/{{$sports_slug}}/{{$row->id}}">{{  word_limiter($striped_desc_sports,35,'...') }}</a></p>
                                     </div>
                                 </div>
                             </div>

@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Services\CurrentNewService;
 use App\Services\ForumService;
 use Illuminate\View\Factory as View;
-use App\Models\Current_news_category_models;
+use App\Models\Current_news_category_model;
 
 class NewsController extends BaseController
 {
@@ -14,8 +14,9 @@ class NewsController extends BaseController
 
     public function __construct()
     {
-        $this->forumService = new ForumService;
-        $this->currentNewService = new CurrentNewService;
+        $this->forumService = new ForumService();
+        $this->currentNewService = new CurrentNewService();
+        $this->Current_news_category_model = new Current_news_category_model();
     }
 
     public function index()
@@ -40,7 +41,8 @@ class NewsController extends BaseController
             'internationals' => $internationals,
             'national' => $national
         ]);*/
-        return $this->render('current_news.index', ['internationals' => $internationals,'national' => $national]);
+        
+        return $this->render('current_news.index',['internationals' => $internationals,'national' => $national]);
     }
 
     public function all()
@@ -59,5 +61,6 @@ class NewsController extends BaseController
             'category_news' => [],
             'is_admin' => false,
         ]);
+        
     }
 }

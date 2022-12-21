@@ -29,7 +29,7 @@
                                 <?php $striped_desc_international = strip_tags($row->short_desc,'<img><a>'); ?>
                                 <p><a href="/news/details/{{$international_slug}}/{{$row->id}}">
                                 @if($indx==0)
-                                    word_limiter($striped_desc_international, 35, '..')
+                                     word_limiter($striped_desc_international, 35, '..')
                                 @else
                                     word_limiter($striped_desc_international,18,'..')
                                 @endif

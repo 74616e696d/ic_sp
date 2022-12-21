@@ -1,10 +1,8 @@
 <?php
 use App\Models\Current_news_category_model;
-$this->Current_news_category_model = new Current_news_category_model();
+$this->Current_news_category_model = new Current_news_category_model();     
 
 ?>
-
-
 <div class="container">
     <div class="row  p_r">
         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -17,7 +15,6 @@ $this->Current_news_category_model = new Current_news_category_model();
                     @if(isset($featured) && $featured)
                     @foreach($featured as $row)
                     <?php $feature_slug=$ci->slug->create_slug($row->title,1); ?>
-                   
                         <div class="row p_r">
                             <div class="hover01 column   bdr_green">
                                 <a href="{{$base_url}}news/details/{{$feature_slug}}/{{$row->id}}">
@@ -30,7 +27,7 @@ $this->Current_news_category_model = new Current_news_category_model();
                                 <?php $striped_desc_feature=strip_tags($row->details,'<img><a>'); ?>
                                 <p>
                                 <a href="{{$base_url}}news/details/{{$feature_slug}}/{{$row->id}}">
-                                {{ word_limiter($striped_desc_feature,50,'...') }}</a>
+                                 {{  word_limiter($striped_desc_feature,50,'...')  }} </a>
                                 </p>
                             </div>
                         </div>

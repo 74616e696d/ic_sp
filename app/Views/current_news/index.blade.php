@@ -1,5 +1,7 @@
 @extends('front_master.master')
+
 @section('content')
+
     @include('current_news._top')
     <div class="spacer-bottom"></div>
 
@@ -12,20 +14,20 @@
     <div class="spacer-bottom"></div>
 
     </div>
-
 @stop
 
 @section('meta_tags')
+
 <?php
     $meta_desc='';
     $meta_key='';
 
-    // $meta_info=meta_tag_model::get_meta();
-    // if($meta_info)
-    // {
-    //     $meta_desc=$meta_info->meta_desc;
-    //     $meta_key=$meta_info->meta_key;
-    // }
+     $meta_info=meta_tag_model::get_meta();
+     if($meta_info)
+     {
+         $meta_desc=$meta_info->meta_desc;
+         $meta_key=$meta_info->meta_key;
+     }
 
 ?>
 <meta name='description' content='{{ $meta_desc }}' />

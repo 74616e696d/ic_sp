@@ -1,0 +1,111 @@
+<div class="row mid_news">
+ 
+ <?php if($internationals): ?>
+ <?php $indx=0; ?>
+ <?php $__currentLoopData = $internationals; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $row): $loop = $this->incrementLoopIndices();  ?>
+ <?php $international_slug = $row->getSlug(); ?>
+ <?php if($indx==0): ?>
+ <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 ">
+ <?php else: ?>
+ <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+ <?php endif; ?>
+ <div class="bsdo_4">
+ <div class="bdr_mid">
+ <div class="row news-content">
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+ <div class="mid_pa_height">
+ <h3><a title="" href="/news/details/<?php echo \htmlentities($international_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?></a></h3>
+ <div class=" hover01 column">
+ <a href="/news/details/<?php echo \htmlentities($international_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php
+ $img_international='/asset/news/'.$row->feature_img;
+ if(file_exists('asset/news/small/'.$row->feature_img))
+ {
+ $img_international='/asset/news/small/'.$row->feature_img;
+ }
+ ?>
+ <figure><img style="max-height:205px;margin:0 auto;" alt="<?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?>" src="<?php echo \htmlentities($img_international??'', ENT_QUOTES, 'UTF-8', false); ?>" class="img-responsive"></figure></a>
+ </div>
+ <?php $striped_desc_international = strip_tags($row->short_desc,'<img><a>'); ?>
+ <p><a href="/news/details/<?php echo \htmlentities($international_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php if($indx==0): ?>
+ word_limiter($striped_desc_international, 35, '..')
+ <?php else: ?>
+ word_limiter($striped_desc_international,18,'..')
+ <?php endif; ?>
+ </a></p>
+ </div>
+ </div>
+ <!--     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 ">
+ 
+ </div> -->
+ </div>
+ <div class="row date_category">
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 c">
+ <p>
+ <?php 
+ /* $category=current_news_category_model::get_text($row->category_id); */
+ /* $category_international=$ci->slug->create_slug($category,1); */ 
+ ?>
+ <a href="/news/categorized/<?php echo \htmlentities($row->category_id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($category_international??'', ENT_QUOTES, 'UTF-8', false); ?>"><span class="category"><?php echo \htmlentities($category??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ </p>
+ </div>
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d">
+ <p><span class="date"><i class="fa fa-calendar"></i>date_short($row->post_date)</span></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 ">
+ <?php if($national): ?>
+ <?php $__currentLoopData = $national; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $row): $loop = $this->incrementLoopIndices();  ?>
+ <?php $national_slug= $row->getSlug(); ?>
+ <div class="bsdo_1">
+ <div class="row bdr ">
+ <div class="row news-content">
+ <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+ <div class="m_h">
+ <h4><a title="" href="/news/details/<?php echo \htmlentities($national_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?></a></h4>
+ <div class=" hover01 column">
+ <a href="/news/details/<?php echo \htmlentities($national_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php
+ $img_national = '/asset/news/' . $row->feature_img;
+ if(file_exists('asset/news/small/'.$row->feature_img))
+ {
+ $img_national = '/asset/news/small/' . $row->feature_img;
+ }
+ ?>
+ <figure><img style="max-height:205px;margin:0 auto;" alt="<?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?>" src="<?php echo \htmlentities($img_national??'', ENT_QUOTES, 'UTF-8', false); ?>" class="img-responsive "></figure></a>
+ </div>
+ <?php $striped_desc_national=strip_tags($row->short_desc,'<img><a>'); ?>
+ <p><a href="/news/details/<?php echo \htmlentities($national_slug??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($row->id??'', ENT_QUOTES, 'UTF-8', false); ?>">word_limiter($striped_desc_national,20,'...')</a></p>
+ </div>
+ </div>
+ </div>
+ <div class="row date_category">
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 c">
+ <p>
+ <?php
+ $category=Current_news_category_model::get_text($row->category_id);
+ $category_national=$ci->slug->create_slug($category,1); 
+?>
+ <a href="/current_news/categorized/<?php echo \htmlentities($row->category_id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities($category_national??'', ENT_QUOTES, 'UTF-8', false); ?>"><span class="category"><?php echo \htmlentities($category??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ </p>
+ </div>
+ <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d">
+ <p><span class="date"><i class="fa fa-calendar"></i>date_short($row->post_date)</span></p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="spacer"></div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+ </div>
+ <?php $indx++; ?>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+</div>

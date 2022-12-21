@@ -35,7 +35,7 @@ class Current_news_category_model extends Model {
 
 	function get_category($terms='')
 	{
-		$sql="select *from current_news_category $terms";
+		$sql="select * from current_news_category $terms";
 		$qry=$this->db->query($sql);
 		if($qry->num_rows()>0)
 		{
