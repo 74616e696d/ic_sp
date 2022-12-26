@@ -51,6 +51,7 @@ class AuthController extends BaseController
                 $this->validation->setRules($rules);
                 if(!$this->validation->run($_POST))
                 {
+                        
                     $this->session->setFlashdata('error', $this->validation->getErrors());
 
                     redirect('/');
@@ -59,19 +60,18 @@ class AuthController extends BaseController
                     exit;
                 }
                 
-                
-                
-		
                 if($res = $this->loginModel->validate1($user_name,$password))
                 {
+                        
                         $this->session->set($res);
-                         $mtype=$this->session->get('utype');
+                        $mtype=$this->session->get('utype');
                         
                         $this->loginModel->online_status($user_name,1);  //update online status
                         $this->loginModel->last_login($user_name); //update last login time
 
                         if($mtype!='101' && $mtype!='102')
                         {
+                                
                                 return redirect()->to(base_url().'/member/dashboard');
                         }
                         else

@@ -55,7 +55,8 @@ $routes->get('user_manual', 'PagesController::userManual');
 
 // Forum
 $routes->get('forum/posts', 'ForumsController::posts');
-$routes->get('forum/posts', 'ForumsController::posts');
+//$routes->get('forum/posts', 'ForumsController::posts');
+$routes->get('forum/posts/create', 'ForumsController::create');
 $routes->get('forum/replies/(:num)/(:segment)', 'ForumsController::replies/$1');
 
 
@@ -77,7 +78,7 @@ $routes->get('member/model_quiz_progress', 'Member\ModelQuizProgressController::
 $routes->get('report/strength_report', 'Report\StrengthReportController::index');
 $routes->post('report/strength_report', 'Report\StrengthReportController::index');
 $routes->get('member/days_hints', 'Member\DaysHintsController::index');
-$routes->get('admin/dashboard', '');
+$routes->get('admin/dashboard', 'MemberController::dashboard');
 service('auth')->routes($routes);
 
 /*

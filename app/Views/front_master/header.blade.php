@@ -27,7 +27,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
             <div class='login-box'>
-                <form action="/login" method="POST">
+                <form action="{{$base_url}}/login" method="POST">
                     <?php 
                     if(isset($errors))
                     {
@@ -54,8 +54,8 @@
                     Login
                     </button>
                     <div class="spacer"></div>
-                    <a href="/login/forget_password_view" class='text-muted' title="Forget Password">Forget my password</a>
-                    <a href="/public/user_reg" class='text-primary pull-right btn-new-account' title="signup now">Signup Now</a>
+                    <a href="{{$base_url}}/public/login/forget_password_view" class='text-muted' title="Forget Password">Forget my password</a>
+                    <a href="{{$base_url}}/public/user_reg" class='text-primary pull-right btn-new-account' title="signup now">Signup Now</a>
                 </form>
             </div>
         </div>

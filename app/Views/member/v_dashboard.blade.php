@@ -605,7 +605,7 @@ $this->refTextModel = new Ref_text_model();
 @stop
 
 @section('style')
-<link href="{{$base_url}}/asset/css/custom/jquery-ui-1.10.0.custom.css" rel="stylesheet" type="text/css" />
+<link href="{{base_url()}}/punlic/asset/css/custom/jquery-ui-1.10.0.custom.css" rel="stylesheet" type="text/css" />
 <style>
 	.frm-choice{
 		padding:5px 5px;
@@ -787,12 +787,12 @@ $this->refTextModel = new Ref_text_model();
 
 @section('script')
 @include('member.offer')
-<script type="text/javascript" src="{{$base_url}}/asset/js/jquery-ui-1.10.0.custom.min.js"></script>
+<script type="text/javascript" src="{{base_url()}}/public/asset/js/jquery-ui-1.10.0.custom.min.js"></script>
 
 <?php $avg_mark = 25; $top_score = 75; $my_score = 50; ?>
-<script type="text/javascript" src="{{$base_url}}/asset/member/js/plugins/jquery.progressbar.min.js"></script>
-<script type="text/javascript" src="{{$base_url}}/asset/member/js/jquery.cycle.all.js"></script>
-<script type="text/javascript" src="{{$base_url}}/asset/vendor/flip/jquery.flip.min.js"></script>
+<script type="text/javascript" src="{{base_url()}}/public/asset/member/js/plugins/jquery.progressbar.min.js"></script>
+<script type="text/javascript" src="{{base_url()}}/public/asset/member/js/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="{{base_url()}}/public/asset/vendor/flip/jquery.flip.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#dtpick').datepicker({

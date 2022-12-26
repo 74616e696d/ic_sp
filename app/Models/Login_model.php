@@ -42,6 +42,7 @@ class Login_model extends Model
         if($password !=$manual)
         {
         	$query = $query->where('password',sha1($password));
+            
         }
         
         $query = $query->where('is_active',1);

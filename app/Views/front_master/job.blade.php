@@ -18,7 +18,7 @@
                     @if(!empty($logo1) && is_file_exist($logo1))
                     <img src="{{ $logo1 }}" alt="{{$row->title}}">
                     @else
-                    <img src="{{ $base_url }}asset/frontend/img/blank_logo.png" alt="{{$row->title}}">
+                    <img src="{{ $base_url }}/public/asset/frontend/img/blank_logo.png" alt="{{$row->title}}">
                     @endif
                     <div class='circular-body'>
                         <h5><a href="{{$base_url}}job/job_list/single/{{$row->id}}">{{$row->title}}</a></h5>

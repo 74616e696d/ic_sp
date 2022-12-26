@@ -121,7 +121,7 @@
                     <div class="col-md-8 col-sm-8 col-xs-8">
                         <div class="cv-apply">
                             <div class="pdf-box">
-                                <img src="/asset/job/theme/images/cv-icon.png"/>
+                                <img src="{{base_url()}}/public/asset/job/theme/images/cv-icon.png"/>
                             </div>
                             <h2>
                                 Your CV applies for you.
@@ -129,7 +129,7 @@
                             <h3>
                                 Create a CV and let yourself be found.
                             </h3>
-                            <a class="btn btn-default learn-more" href="/job/job_list/cv">
+                            <a class="btn btn-default learn-more" href="{{base_url()}}/job/job_list/cv">
                                 Learn More...
                             </a>
                         </div>
@@ -146,7 +146,7 @@
                         <div class="guide-box-first">
                             <div class="media">
                                 <a class="pull-right" href="#">
-                                    <img class="media-object" src="/asset/job/theme/images/job-icon-box.png">
+                                    <img class="media-object" src="{{base_url()}}/public/asset/job/theme/images/job-icon-box.png">
                                 </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">
@@ -155,7 +155,7 @@
                                     <p>
                                         The most recent job offers per email  every day
                                     </p>
-                                    <a class="btn btn-default learn-go" href="/job/job_list/cv">
+                                    <a class="btn btn-default learn-go" href="{{base_url()}}/job/job_list/cv">
                                         Go..
                                     </a>
                                 </div>
@@ -166,7 +166,7 @@
                         <div class="guide-box-sec">
                             <div class="media">
                                 <a class="pull-right" href="#">
-                                    <img class="media-object" src="/asset/job/theme/images/job-pencil.png">
+                                    <img class="media-object" src="{{base_url()}}/public/asset/job/theme/images/job-pencil.png">
                                 </a>
                                 <div class="media-body">
                                     <h4 class="media-heading">
@@ -175,7 +175,7 @@
                                     <p>
                                         The most recent job offers per email every day
                                     </p>
-                                    <a class="btn btn-default learn-go" href="/job/job_list/cv">
+                                    <a class="btn btn-default learn-go" href="{{base_url()}}/job/job_list/cv">
                                         More...
                                     </a>
                                 </div>

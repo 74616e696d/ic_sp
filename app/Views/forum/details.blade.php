@@ -21,15 +21,15 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							@if(!empty($details->feature_image)  
-							 && file_exists('./asset/upload/forum/'.$details->feature_image))
-							<img width="100%"  src="{{ $base_url }}asset/upload/forum/{{ $details->feature_image }}" alt="$details->title">
+							 && file_exists('./public/asset/upload/forum/'.$details->feature_image))
+							<img width="100%"  src="{{ base_url() }}/public/asset/upload/forum/{{ $details->feature_image }}" alt="$details->title">
 							<br><br>
 							@else
-							<img width="100%" src="{{ $base_url }}asset/upload/forum/blank.jpg" alt="$details->title">
+							<img width="100%" src="{{ base_url() }}/public/asset/upload/forum/blank.jpg" alt="$details->title">
 							<br><br>
 							@endif
 							<h3 class="panel-title post-title">
-							<a rel="bookmark" href="{{$base_url}}forum/forum/replies/{{$details->id}}">
+							<a rel="bookmark" href="{{$base_url}}/forum/forum/replies/{{$details->id}}">
 				                {{!empty($details->title)?$details->title:'Untitled'}}
 				             </a>
 				            </h3>
@@ -38,7 +38,7 @@
 							<ul class="list-inline">
 								<li>
 									<?php
-										$fb_image= '/asset/frontend/img/banner.jpg';
+										$fb_image= '{{base_url()}}/public/asset/frontend/img/banner.jpg';
 										if(file_exists('asset/upload/forum/' . $post->feature_image))
 										{
 											$fb_image= '/asset/upload/forum/'.$post->feature_image;
@@ -47,7 +47,7 @@
 										$post_details = $post->details;
 										$url= "//forum/replies/".$post->id;
 										$title=!empty($post->title)?$post->title:'Iconpreparation';
-										// $summery= word_limiter(strip_tags($post_details),70);
+										 $summery= word_limiter(strip_tags($post_details),70);
 										$summery = '';
 									?>
 									<a class="social social-facebook btnShare" href="{{$url}}" data-title="{{$title}}" data-picture="{{ $fb_image }}" data-desc="{{$summery}}"><i class="fa fa-facebook"></i></a>
@@ -57,7 +57,7 @@
 									<a href="" class="social social-twitter hide"><i class="fa fa-twitter"></i></a>
 								</li>
 							</ul>
-							<h5>date_short($post->post_date)</h5>
+							<h5><?php echo date_short($post->post_date) ?></h5>
 							@if($post)
 							<input type="hidden" id="hdn_post_id" value="{{$post->id}}">
 							<article class="post-89 post type-post status-publish format-standard hentry category-2 tag-bcs-examination-marks-distribution tag-bcs-written-syllabus" id="post-89">
@@ -65,7 +65,7 @@
 							    <div class="row">
 						            <div class="post-content-wrap col-sm-12 col-md-12">
 					                    <div class="entry-content">
-				                        	<p>{{$post_details}}</p>
+				                        	<p><?php $post_details ?></p>
 											@include('forum.footer')
 				                        </div>
 										<!-- .entry-content -->

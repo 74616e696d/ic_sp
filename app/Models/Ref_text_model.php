@@ -162,9 +162,22 @@ class Ref_text_model extends Model {
 
 	public function get_text($id)
 	{
+		$db = \Config\Database::connect();
 		//$ci =& get_instance();
 		//$ci->db->cache_on();
-		return $this->db->table('ref_text')->where('id',$id)->select('name')->get()->getRow()->name;
+		$builder = $db->table('ref_text');
+		$builder->where('id',$id);
+		$result   = $builder->get();
+		if($result->getNumRows()>0)
+		{
+			return $result->getRow()->name;
+		}else{
+
+			return '';
+		}
+		
+		
+		//return $this->db->table('ref_text')->where('id',$id)->select('name')->get()->getRow()->name;
 		/*$ci->db->cache_off();
 		if($query->num_rows()>0){
 			$result=$query->row()->name;

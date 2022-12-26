@@ -6,7 +6,7 @@ use Illuminate\View\Factory as View;
 
 use App\Models\Exam_model;
 use App\Models\Ref_text_model;
-use App\Models\Exam\Choosen_category_model;
+use App\Models\Exam\ChoosenCategoryModel;
 use App\Models\member\Result_model;
 use App\Models\Exam_lock_model;
 use App\Models\Permission_model;
@@ -52,7 +52,7 @@ class TakeExamController extends BaseController {
             
             $this->ref_text_model = new Ref_text_model();
                 $this->exam_model = new Exam_model();
-                $this->choosen_category_model = new Choosen_category_model();
+                $this->choosen_category_model = new ChoosenCategoryModel();
                 $this->result_model = new Result_model();
                 $this->exam_lock_model = new Exam_lock_model();
                 $this->permission_model = new Permission_model();

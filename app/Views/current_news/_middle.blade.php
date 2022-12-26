@@ -1,3 +1,9 @@
+<?php
+use App\Helpers\text_helper;
+use App\Models\Current_news_category_model;
+$currentNewsCategoryModel = new Current_news_category_model();
+$slug = new App\Libraries\Slug;
+?>
 <div class="row mid_news">
      
     @if($internationals)
@@ -29,9 +35,9 @@
                                 <?php $striped_desc_international = strip_tags($row->short_desc,'<img><a>'); ?>
                                 <p><a href="/news/details/{{$international_slug}}/{{$row->id}}">
                                 @if($indx==0)
-                                     word_limiter($striped_desc_international, 35, '..')
+                                   <?php echo word_limiter($striped_desc_international, 35, '..'); ?>
                                 @else
-                                    word_limiter($striped_desc_international,18,'..')
+                                    <?php echo word_limiter($striped_desc_international,18,'..'); ?>
                                 @endif
                                 </a></p>
                             </div>
@@ -51,7 +57,7 @@
                         </p>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d">
-                        <p><span class="date"><i class="fa fa-calendar"></i>date_short($row->post_date)</span></p>
+                        <p><span class="date"><i class="fa fa-calendar"></i><?php echo date_short($row->post_date); ?></span></p>
                     </div>
                 </div>
             </div>
@@ -66,20 +72,20 @@
                 <div class="row news-content">
                     <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="m_h">
-                            <h4><a title="" href="/news/details/{{$national_slug}}/{{$row->id}}">{{ $row->title }}</a></h4>
+                            <h4><a title="" href="{{ base_url() }}/news/details/{{$national_slug}}/{{$row->id}}">{{ $row->title }}</a></h4>
                             <div class=" hover01 column">
-                            <a href="/news/details/{{$national_slug}}/{{$row->id}}">
+                            <a href="{{ base_url() }}/news/details/{{$national_slug}}/{{$row->id}}">
                             <?php
-                                $img_national = '/asset/news/' . $row->feature_img;
-                                if(file_exists('asset/news/small/'.$row->feature_img))
+                                $img_national = '/public/asset/news/' . $row->feature_img;
+                                if(file_exists('/public/asset/news/small/'.$row->feature_img))
                                 {
-                                    $img_national = '/asset/news/small/' . $row->feature_img;
+                                    $img_national = '/public/asset/news/small/' . $row->feature_img;
                                 }
                             ?>
                             <figure><img style="max-height:205px;margin:0 auto;" alt="{{ $row->title }}" src="{{ $img_national }}" class="img-responsive "></figure></a>
                             </div>
                             <?php $striped_desc_national=strip_tags($row->short_desc,'<img><a>'); ?>
-                            <p><a href="/news/details/{{$national_slug}}/{{$row->id}}">word_limiter($striped_desc_national,20,'...')</a></p>
+                            <p><a href="{{ base_url() }}/news/details/{{$national_slug}}/{{$row->id}}"><?php echo word_limiter($striped_desc_national,20,'...'); ?></a></p>
                         </div>
                     </div>
                 </div>
@@ -87,14 +93,14 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 c">
                         <p>
                         <?php
-                        $category=Current_news_category_model::get_text($row->category_id);
-                        $category_national=$ci->slug->create_slug($category,1); 
+                        $category=$currentNewsCategoryModel->get_text($row->category_id);
+                        $category_national=$slug->create_slug($category,1); 
 ?>
-                        <a href="/current_news/categorized/{{ $row->category_id }}/{{ $category_national }}"><span class="category">{{ $category }}</span></a>
+                        <a href="{{base_url()}}/current_news/categorized/{{ $row->category_id }}/{{ $category_national }}"><span class="category">{{ $category }}</span></a>
                         </p>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d">
-                        <p><span class="date"><i class="fa fa-calendar"></i>date_short($row->post_date)</span></p>
+                        <p><span class="date"><i class="fa fa-calendar"></i><?php echo date_short($row->post_date); ?></span></p>
                     </div>
                 </div>
             </div>

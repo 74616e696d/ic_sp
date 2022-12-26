@@ -122,7 +122,7 @@ class Job_model extends Model {
 	function job_search($term='',$start=0,$limit=1000)
 	{
 		$db = \Config\Database::connect();
-$builder = $db->table('job_list');
+		$builder = $db->table('job_list');
 		// $this->db->like('tags',$term);
 		// $this->db->or_like('title',$term);
 		// $this->db->or_like('post_name',$term);

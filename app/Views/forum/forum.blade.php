@@ -45,7 +45,7 @@
     <script type="text/javascript">
     var baseurl='{{$base_url}}';
     </script>
-    <script type="text/javascript" src="{{$base_url}}asset/member/js/forum.js"></script>
+    <script type="text/javascript" src="{{$base_url}}/public/asset/member/js/forum.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $('#category').change(function() {

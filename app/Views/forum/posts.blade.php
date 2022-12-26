@@ -1,3 +1,7 @@
+<?php
+use App\Models\Ref_text_model;
+$Ref_text_model= new Ref_text_model();
+?>
 @extends('front_master.master')
 
 @section('content')
@@ -12,7 +16,7 @@
 						<i class="fa fa-bars"></i> Categories
 					</a>
 
-					<a href="/forum/posts/create" class="btn btn-default"><i class="fa fa-plus-circle"></i> New Post</a>
+					<a href="{{ base_url() }}/forum/posts/create" class="btn btn-default"><i class="fa fa-plus-circle"></i> New Post</a>
 				</div>
 				<div class="col-sm-12 col-md-12">
 				@if($posts)
@@ -23,16 +27,16 @@
 							
 							<div class="panel-body">
 							@if(!empty($post->feature_image)  
-							 && file_exists('./asset/upload/forum/'.$post->feature_image))
-							<img width="100%" src="/asset/upload/forum/{{ $post->feature_image }}" alt="$post->title">
+							 && file_exists('./public/asset/upload/forum/'.$post->feature_image))
+							<img width="100%" src="{{ base_url() }}/public/asset/upload/forum/{{ $post->feature_image }}" alt="$post->title">
 							@else
-							<img width="100%" src="/asset/upload/forum/blank.jpg" alt="$post->title">
+							<img width="100%" src="{{ base_url() }}/public/asset/upload/forum/blank.jpg" alt="$post->title">
 							@endif
 								
 							</div>
 										<div class="panel-heading">
 											<h3 class="panel-title">
-												<a rel="bookmark" href="/forum/replies/{{$post->id}}/{{ $post->getSlug() }}">
+												<a rel="bookmark" href="{{base_url()}}/forum/replies/{{$post->id}}/{{ $post->getSlug() }}">
 													{{ !empty($post->title) ? $post->title : 'Untitled' }}
 												</a>
 											</h3>
@@ -43,11 +47,11 @@
 							<div class="panel-footer">
 								<ul class='list-inline pull-right'>
 									<li> 
-									<a rel="category tag" href="{{$base_url}}forum/forum/posts/{{$post->sub_category}}">
+									<a rel="category tag" href="{{base_url()}}forum/forum/posts/{{$post->sub_category}}">
 		                                @if($post->sub_category==5000)
 		                                User Post
 		                                @else
-		                                ref_text_model::get_text($post->sub_category)
+		                                {{ $Ref_text_model->get_text($post->sub_category) }}
 		                                @endif
 		                             </a>
 	                                </li>
@@ -61,7 +65,7 @@
 								?>
 								<a rel="author" title="Posts by {{$post_by}}" href="">{{$post_by}}</a>
 								</li>
-								<li><i class="fa fa-clock-o"></i>  date_short($post->post_date) </li>
+								<li><i class="fa fa-clock-o"></i><?php echo date_short($post->post_date) ?></li>
 								</ul>
 									
 								<div class="clearfix"></div>
@@ -271,7 +275,7 @@ $(document).ready(function() {
     $('#category').change(function() {
         var id=$(this).val();
         $.ajax({
-            url: '{{$base_url}}forum/forum/get_sub_cat',
+            url: '{{base_url()}}forum/forum/get_sub_cat',
             type: 'GET',
             data: {id:id},
         })
@@ -284,7 +288,7 @@ $(document).ready(function() {
 
 function postToFeed(title, desc, url, image)
 {
-	var obj = {method: 'feed',link: url, picture: '{{$base_url}}asset/frontend/img/'+image,name: title,description: desc};
+	var obj = {method: 'feed',link: url, picture: '{{ base_url() }}/public/asset/frontend/img/'+image,name: title,description: desc};
 	function callback(response){}
 	FB.ui(obj, callback);
 }

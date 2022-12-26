@@ -301,8 +301,17 @@ class Membership_model extends Model {
 
 	 function get_text($id)
 	{
+		
+		$db = \Config\Database::connect();
 		//$ci =& get_instance();
-		return $this->db->table('membership')->where('id',$id)->get()->getRow()->name;
+		//$ci->db->cache_on();
+		$builder = $db->table('membership');
+		$builder->where('id',$id);
+		$result   = $builder->get();
+		return $result->getRow()->name;
+
+		//$ci =& get_instance();
+		//return $this->db->table('membership')->where('id',$id)->get()->getRow()->name;
 		/*if($qry->num_rows()>0)
 		{
 			return $qry->row()->name;

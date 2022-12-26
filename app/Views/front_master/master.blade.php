@@ -28,9 +28,9 @@
         <link rel="shortcut icon" href="/asset/frontend/img/favicon.ico" type="image/x-icon">
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,300italic,300,100italic,100,900' rel='stylesheet' type='text/css'>
         <!-- Bootstrap -->
-        <link href="/asset/frontend/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>/public/asset/frontend/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/asset/frontend/new/css/style.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/public/asset/frontend/new/css/style.css">
        <style>
        .menu-module li a:hover{
            cursor: pointer;
@@ -112,7 +112,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/asset/frontend/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>/public/asset/frontend/js/bootstrap.min.js"></script>
     <script type="text/javascript">
     jQuery(document).ready(function($) {
         $(".menu-module li a").click(function(e) {
@@ -143,5 +143,3 @@
     </script>
     </body>
 </html>
-   <?php
-exit;

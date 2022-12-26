@@ -8,7 +8,7 @@
 				<h4 class="bx-title"></h4>
 			</div>
 			<div class="bx bx-body">
-				<form class='form-inline' action="{{ $base_url }}/report/strength_report" method="post">
+				<form class='form-inline' action="{{ base_url() }}/report/strength_report" method="post">
 					<div class="form-group">
 					<select class='form-control' name="ddl_subject" id="ddl_subject">
 						<option value="-1">Select Subject</option>
@@ -29,8 +29,8 @@
 @stop
 
 @section('script')
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/highcharts.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>asset/js/exporting.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>/public/asset/js/highcharts.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>/public/asset/js/exporting.js"></script>
 <script type="text/javascript">
 	$(function () {
 

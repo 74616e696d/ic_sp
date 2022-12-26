@@ -20,12 +20,14 @@ class Current_news_category_model extends Model {
 	 */
 	static function get_text($id)
 	{
-		$ci =& get_instance();
-		$ci->db->where('id',$id);
-		$qry=$ci->db->get('current_news_category');
-		if($qry->num_rows()>0)
+		$db = \Config\Database::connect();
+		//$ci =& get_instance();
+		$builder = $db->table('current_news_category');
+		$builder->where('id',$id);
+		$qry=$builder->get();
+		if($qry->getNumRows()>0)
 		{
-			return $qry->row()->name;
+			return $qry->getRow()->name;
 		}
 		else
 		{
@@ -35,7 +37,7 @@ class Current_news_category_model extends Model {
 
 	function get_category($terms='')
 	{
-		$sql="select * from current_news_category $terms";
+		$sql="select *from current_news_category $terms";
 		$qry=$this->db->query($sql);
 		if($qry->num_rows()>0)
 		{

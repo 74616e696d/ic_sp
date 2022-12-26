@@ -28,7 +28,7 @@
                     $category = $news->category();
                     $category_slug = $category->name;  
                     ?>
-                    <h4><a href="{{ $base_url }}news/categorized/{{ $news->category_id }}/{{ $category_slug }}">{{ $category->name }}</a></h4>
+                    <h4><a href="{{ base_url() }}news/categorized/{{ $news->category_id }}/{{ $category_slug }}">{{ $category->name }}</a></h4>
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@
 
                 <div class="row auto_mar">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img style="margin:0 auto;" src="{{ $base_url }}asset/news/{{ $news->feature_img }}" class="img-responsive" alt="{{ $news->title }}">
+                        <img style="margin:0 auto;" src="{{ base_url() }}/public/asset/news/{{ $news->feature_img }}" class="img-responsive" alt="{{ $news->title }}">
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@
 
                 <div class="row auto_mar">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p>date_short($news->post_date) }}</p>
+                        <p><?php echo date_short($news->post_date); ?></p>
                     </div>
                 </div>
 
@@ -78,7 +78,7 @@
 
                  <div class="row auto_mar">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-pad">
-                        <img src="{{ $base_url }}asset/frontend/img/ad11.jpg" class="img-responsive" alt="Adv">
+                        <img src="{{ base_url() }}asset/frontend/img/ad11.jpg" class="img-responsive" alt="Adv">
                     </div>
                  </div> -->
 
@@ -95,7 +95,7 @@
                             <?php 
                             $tags_slug=$ci->slug->create_slug($row->title,1);  
                             ?>
-                            <li class="list-group-item"><a href="{{ $base_url }}news/details/{{ $tags_slug }}/{{ $row->id }}">
+                            <li class="list-group-item"><a href="{{ base_url() }}news/details/{{ $tags_slug }}/{{ $row->id }}">
                             <span class='list-circle'></span>{{ $row->title }}</a></li>
                             @endforeach
                             @endif
@@ -112,7 +112,7 @@
                             <?php 
                             $news_slug=$ci->slug->create_slug($row->title,1);  
                             ?>
-                            <li class="list-group-item"><a href="{{ $base_url }}news/details/{{ $news_slug }}/{{ $row->id }}">
+                            <li class="list-group-item"><a href="{{ base_url() }}news/details/{{ $news_slug }}/{{ $row->id }}">
                             <span class='list-circle'></span>{{ $row->title }}</a></li>
                             @endforeach
                             @endif
@@ -128,7 +128,7 @@
                     <?php 
                     $news_slug= $news->getSlug();
                     ?>
-                    <div class="fb-comments" data-href="{{$base_url}}news/details/{{ $news_slug }}/{{$news->id}}" data-numposts="10"></div>
+                    <div class="fb-comments" data-href="{{base_url()}}news/details/{{ $news_slug }}/{{$news->id}}" data-numposts="10"></div>
                 </div>
             </div>
 
@@ -136,7 +136,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="row auto_mar">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <a href="http://discounts.com.bd/" target="_blank"><img src="{{ $base_url }}asset/frontend/img/add10.jpg" class="img-responsive" alt="Discount Shop Bangladesh"> 
+                        <a href="http://discounts.com.bd/" target="_blank"><img src="{{ base_url() }}/public/asset/frontend/img/add10.jpg" class="img-responsive" alt="Discount Shop Bangladesh"> 
                         </a>
                     </div>
                 </div>
@@ -152,10 +152,10 @@
                             <?php 
                             $title_slug=$ci->slug->create_slug($row->title,1);  
                             ?>
-                            <li class="list-group-item"><a href="{{ $base_url }}news/details/{{ $title_slug }}/{{ $row->id }}">
+                            <li class="list-group-item"><a href="{{ base_url() }}news/details/{{ $title_slug }}/{{ $row->id }}">
                             <span class='list-circle'></span>{{ $row->title }}</a></li>
                             @endforeach
-                            <li class="list-group-item"><a href='{{ $base_url }}news/categorized/{{ $news->category_id }}/{{ $category_slug }}'>সব নিউজ পড়ুন ...</a></li>
+                            <li class="list-group-item"><a href='{{ base_url() }}news/categorized/{{ $news->category_id }}/{{ $category_slug }}'>সব নিউজ পড়ুন ...</a></li>
                             @endif
                         </ul>
                     </div>
@@ -166,7 +166,7 @@
             <div class="row auto_mar">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <a href="http://revinr.com/" target='_blank'>
-                    <img src="{{ $base_url }}asset/frontend/img/ad12.png" class="img-responsive" alt="#"></a>
+                    <img src="{{ base_url() }}/public/asset/frontend/img/ad12.png" class="img-responsive" alt="#"></a>
                 </div>
             </div>
             <div class="spacer-bottom"></div>
@@ -179,7 +179,7 @@
             @if($is_admin)
             <div class="row auto_mar">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <a id='btnInvite' href="{{ get_referral_url() }}" data-title='Register &amp; Get One Week Full Access' data-desc='Hi There' data-image='{{ $base_url }}asset/frontend/new/img/logo.png' class='btn btn-default btn-block'>Invite Your Friends</a>
+                  <a id='btnInvite' href="{{ get_referral_url() }}" data-title='Register &amp; Get One Week Full Access' data-desc='Hi There' data-image='{{ base_url() }}/public/asset/frontend/new/img/logo.png' class='btn btn-default btn-block'>Invite Your Friends</a>
                 </div>
             </div>
             @endif
@@ -193,11 +193,11 @@
 @stop
 
 @section('style')
-<link rel="stylesheet" href="{{ $base_url }}asset/vendor/jssocials/jssocials.css">
-<link rel="stylesheet" href="{{ $base_url }}asset/vendor/jssocials/jssocials-theme-flat.css">
-<link rel="stylesheet" href="{{$base_url}}asset/frontend/css/current_news.css">
-<link rel="stylesheet" href="{{ $base_url }}asset/frontend/css/feature.css">
-<link rel="stylesheet" href="{{ $base_url }}asset/frontend/css/current_news_flipcard.css">
+<link rel="stylesheet" href="{{ base_url() }}/public/asset/vendor/jssocials/jssocials.css">
+<link rel="stylesheet" href="{{ base_url() }}/public/asset/vendor/jssocials/jssocials-theme-flat.css">
+<link rel="stylesheet" href="{{base_url()}}/public/asset/frontend/css/current_news.css">
+<link rel="stylesheet" href="{{ base_url() }}/public/asset/frontend/css/feature.css">
+<link rel="stylesheet" href="{{ base_url() }}/public/asset/frontend/css/current_news_flipcard.css">
 <style>
     .c_d_c{
         background: #fff;
@@ -272,9 +272,9 @@
 
 @stop
 @section('script')
-<script type="text/javascript" src="{{ $base_url }}asset/vendor/jssocials/jssocials.min.js"></script>
+<script type="text/javascript" src="{{ base_url() }}/public/asset/vendor/jssocials/jssocials.min.js"></script>
  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
- <script type="text/javascript" src="{{ $base_url }}asset/vendor/flip/jquery.flip.min.js"></script>
+ <script type="text/javascript" src="{{ base_url() }}/public/asset/vendor/flip/jquery.flip.min.js"></script>
 <script type="text/javascript">
 $(document).bind('keydown', 'ctrl+s', function(){$('#save').click(); return false;});
 $(document).bind('keydown', 'ctrl+u', function(){$('#save').click(); return false;});
@@ -371,5 +371,5 @@ $current_url=str_replace('index.php/', '', $current_url);
 <meta property="og:url" content="{{ $current_url }}" />
 <meta property="og:type" content="article" />
 <meta property="og:description" content="{{ strip_tags($details) }}" />
-<meta property="og:image" content="{{ $base_url }}asset/news/{{ $news->feature_img }}" />
+<meta property="og:image" content="{{ base_url() }}/public/asset/news/{{ $news->feature_img }}" />
 @stop

@@ -47,7 +47,7 @@ class PublicController extends BaseController
         $data['title']='Member Registration';
         $data['session'] = $this->session;
       
-        $this->render('public.v_user_reg', $data);
+        return $this->render('public.v_user_reg', $data);
     }
     
     
@@ -141,7 +141,7 @@ class PublicController extends BaseController
 							//$this->upgrade->add($data_upgrade);
 
 							//$msg=$this->confirmation_mail($user_name,$email,$password,$key);
-							$this->sign_in($email, $password);
+							$this->login($email, $password);
 							$this->session->setFlashdata('success', "ধন্যবাদ ! আইকনপ্রিপ্যারাশন এ রেজিস্ট্রেশন সফল হয়েছে। <br/>
 দয়া করে লগইন করুন");
 
@@ -181,13 +181,14 @@ class PublicController extends BaseController
 	}
         
         
-        function sign_in($uname,$pass)
+    function login($uname,$pass)
 	{
 		$user_name=$uname;
 		$password=$pass;
 		if(!empty($user_name)){
 			if(!empty($password))
 			{
+	
 				if($res = $this->loginModel->validate1($user_name,$password))
 				{
                                     $this->session->set($res);

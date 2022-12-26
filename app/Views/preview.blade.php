@@ -42,7 +42,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
   $('.ck_join').click(function(event) {
-    window.location.href='{{$base_url}}public/user_reg';
+    window.location.href='{{base_url()}}public/user_reg';
   });
 
 });

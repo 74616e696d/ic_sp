@@ -1,4 +1,3 @@
-
 <html>
 <head>
     {{$debugbarRenderer->renderHead()}}

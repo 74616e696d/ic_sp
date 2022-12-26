@@ -5,8 +5,6 @@ namespace App\Controllers;
 use App\Services\CurrentNewService;
 use App\Services\ForumService;
 use Illuminate\View\Factory as View;
-use App\Models\Current_news_category_model;
-
 class NewsController extends BaseController
 {
     private $forumService;
@@ -14,9 +12,8 @@ class NewsController extends BaseController
 
     public function __construct()
     {
-        $this->forumService = new ForumService();
-        $this->currentNewService = new CurrentNewService();
-        $this->Current_news_category_model = new Current_news_category_model();
+        $this->forumService = new ForumService;
+        $this->currentNewService = new CurrentNewService;
     }
 
     public function index()
@@ -25,42 +22,47 @@ class NewsController extends BaseController
             'category_id' => 2,
             'limit' => 1,
         ]);
-
+		
         $national = $this->forumService->getTopNews([
             'category_id' => 1,
             'limit' => 1,
         ]);
-
-        /*
+        
         return $this->render('current_news.index',[
             'internationals' => $internationals,
             'national' => $national
-        ]); */
-        /*
-        return $this->view->run('current_news.index', [
+        ]);
+		
+        /*return $this->view->run('current_news.index', [
             'internationals' => $internationals,
             'national' => $national
         ]);*/
-        
-        return $this->render('current_news.index',['internationals' => $internationals,'national' => $national]);
     }
 
     public function all()
     {
-        return $this->view->run('current_news.list', []);
+        //return $this->view->run('current_news.list', []);
+		return $this->render('current_news.list', []);
     }
 
     public function show($title = null, $newId = null)
     {
+        $newId = $this->request->uri->getSegment(4);
         $new = $this->currentNewService->getCurrentNew($newId);
 
-        return $this->view->run('current_news.details', [
+        /* return $this->view->run('current_news.details', [
+            'news' => $new,
+            'tags_news' => [],
+            'top_news' => [],
+            'category_news' => [],
+            'is_admin' => false,
+        ]); */
+        return $this->render('current_news.details', [
             'news' => $new,
             'tags_news' => [],
             'top_news' => [],
             'category_news' => [],
             'is_admin' => false,
         ]);
-        
     }
 }

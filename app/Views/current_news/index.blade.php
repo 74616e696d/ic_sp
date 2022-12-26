@@ -1,8 +1,7 @@
 @extends('front_master.master')
-
 @section('content')
-
     @include('current_news._top')
+	
     <div class="spacer-bottom"></div>
 
     <div class="container">
@@ -14,20 +13,20 @@
     <div class="spacer-bottom"></div>
 
     </div>
+
 @stop
 
 @section('meta_tags')
-
 <?php
     $meta_desc='';
     $meta_key='';
 
-     $meta_info=meta_tag_model::get_meta();
-     if($meta_info)
-     {
-         $meta_desc=$meta_info->meta_desc;
-         $meta_key=$meta_info->meta_key;
-     }
+    // $meta_info=meta_tag_model::get_meta();
+    // if($meta_info)
+    // {
+    //     $meta_desc=$meta_info->meta_desc;
+    //     $meta_key=$meta_info->meta_key;
+    // }
 
 ?>
 <meta name='description' content='{{ $meta_desc }}' />
@@ -67,7 +66,7 @@
 </style>
 @stop
 @section('script')
-<script type="text/javascript" src="{{$base_url}}asset/vendor/bxslider/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="{{base_url()}}/public/asset/vendor/bxslider/jquery.bxslider.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     var title = $(document).prop('title','Current News || Iconpreparation');

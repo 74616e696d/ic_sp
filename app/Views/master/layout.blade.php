@@ -3,19 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>Iconpreparation  | @if(isset($title)){{$title}}@endif</title>
-        <link rel="shortcut icon" href="{{$base_url}}/asset/frontend/img/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="{{base_url()}}/public/asset/frontend/img/favicon.ico" type="image/x-icon">
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
-        <link href="{{$base_url}}/asset/member/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{base_url()}}/public/asset/member/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!-- font Awesome -->
-        <link href="{{$base_url}}/asset/member/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{base_url()}}/public/asset/member/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
-        <link href="{{$base_url}}/asset/member/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{base_url()}}/public/asset/member/css/ionicons.min.css" rel="stylesheet" type="text/css" />
       
         <!-- Theme style -->
-        <link href="{{$base_url}}/asset/member/css/AdminLTE.css" rel="stylesheet" type="text/css" /> 
+        <link href="{{base_url()}}/public/asset/member/css/AdminLTE.css" rel="stylesheet" type="text/css" /> 
 
-        <link rel="stylesheet" href="{{$base_url}}/asset/member/css/common.css">
+        <link rel="stylesheet" href="{{base_url()}}/public/asset/member/css/common.css">
         
         <style>
 
@@ -98,17 +98,17 @@
 
 <!-- jQuery 2.0.2 -->
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
-<script type="text/javascript" src="{{$base_url}}/asset/member/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="{{base_url()}}/public/asset/member/js/jquery-1.10.2.min.js"></script>
 <!-- jQuery UI 1.10.3 -->
-<script src="{{$base_url}}/asset/member/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+<script src="{{base_url()}}/public/asset/member/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
 <!-- Bootstrap -->
-<script src="{{$base_url}}/asset/member/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{{base_url()}}/public/asset/member/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- daterangepicker -->
-<script src="{{$base_url}}/asset/member/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>  
+<script src="{{base_url()}}/public/asset/member/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>  
 <!-- AdminLTE App -->
-<script src="{{$base_url}}/asset/member/js/AdminLTE/app.js" type="text/javascript"></script>
+<script src="{{base_url()}}/public/asset/member/js/AdminLTE/app.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="{{$base_url}}/js/custom/general.js"></script>
+<script type="text/javascript" src="{{base_url()}}/js/custom/general.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         var curr_uri='{{current_url()}}',
@@ -125,7 +125,7 @@
         });
     });
 </script>
-        <script type="text/javascript" src="{{$base_url}}asset/member/js/custom.js"></script>
+        <script type="text/javascript" src="{{base_url()}}/public/asset/member/js/custom.js"></script>
 
         @yield('script')
 

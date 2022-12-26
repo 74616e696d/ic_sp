@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="{{ base_url() }}">
-        <img src="{{ base_url('asset/frontend/new/img/logo.png') }}" alt="Iconpreparation">
+        <img src="{{ base_url('public/asset/frontend/new/img/logo.png') }}" alt="Iconpreparation">
       </a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -38,7 +38,7 @@
         @endif
         <li><a href="{{ base_url('job/job_list') }}">Jobs</a></li>
         <li><a href="{{ base_url('current_news') }}">Current News</a></li>
-        <li><a href="/forum/posts">Blog</a></li>
+        <li><a href="{{ base_url() }}/forum/posts">Blog</a></li>
         @guest
           <li><a href="{{ base_url('public/user_reg') }}" class='btn btn-primary btn-sm btn-login'>SIGN UP</a></li>
         @endguest

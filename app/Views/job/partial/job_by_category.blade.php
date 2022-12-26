@@ -16,7 +16,7 @@
         @foreach($job_chunks[$p] as $row)
         
         <li>
-          <a href="/job/job_list/details/{{ $row->id }}/cat">
+          <a href="{{base_url()}}/job/job_list/details/{{ $row->id }}/cat">
             {{ $row->title }} ({{ $row->total  }})
           </a>
         </li>

@@ -12,19 +12,19 @@
           $default_meta.='<meta property="og:url" content="http://iconpreparation.com/" />'."\r\n";
           $default_meta.='<meta property="og:type" content="article" />'."\r\n";
           $default_meta.='<meta property="og:description" content="BCS &amp; Bank Job Preparation provided by Iconpreparation. Best website for BCS Exam and best website for Bank Job Preparation. All BCS starting from 10th to 35th Questions and solutions are available here. People can study all materials and take model tests for BCS &amp; Bank Job Preparation. Banks job questions and solutions are also available here. Expert instructors are there to support the candidates to make an excellent preparation for job." />'."\r\n";
-          $default_meta.='<meta property="og:image" content="' . base_url('asset/frontend/new/img/mobile.png') . '" />'."\r\n";
+          $default_meta.='<meta property="og:image" content="' . base_url('public/asset/frontend/new/img/mobile.png') . '" />'."\r\n";
         ?>
         
         @yield('fbmeta',$default_meta)
         <link rel="shortcut icon" href="{{$base_url}}asset/frontend/img/favicon.ico" type="image/x-icon">
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,300italic,300,100italic,100,900' rel='stylesheet' type='text/css'>
         <!-- Bootstrap -->
-        <link href="/asset/frontend/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/asset/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/asset/job/css/jquery.bxslider.css">
-        <link rel="stylesheet" href="/asset/job/css/style.css">
-        <link rel="stylesheet" href="/asset/job/css/job_circular.css">
-        <link rel="stylesheet" href="/asset/job/theme/css/job.css">
+        <link href="{{base_url()}}/public/asset/frontend/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{base_url()}}/public/asset/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{base_url()}}/public/asset/job/css/jquery.bxslider.css">
+        <link rel="stylesheet" href="{{base_url()}}/public/asset/job/css/style.css">
+        <link rel="stylesheet" href="{{base_url()}}/public/asset/job/css/job_circular.css">
+        <link rel="stylesheet" href="{{base_url()}}/public/asset/job/theme/css/job.css">
         <style>
             .footer-list li a{
                 text-decoration: none;
@@ -61,17 +61,17 @@
             <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">
-            <img class="img-responsive" src="/asset/frontend/new/img/logo.png" alt="Iconpreparation">
+            <img class="img-responsive" src="{{base_url()}}/public/asset/frontend/new/img/logo.png" alt="Iconpreparation">
             </a>
         </div>
       <!--   Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right navbar-home">
                 <li><a href="/">Home</a></li>
-                <li><a href="/job/job_list">Jobs</a></li>
-                <li><a href="/current_news">Current News</a></li>
-                <li><a href="/forum/posts">Forum</a></li>
-                <li ><a href="/public/user_reg" class='btn btn-primary btn-sm btn-login'>SIGN UP</a></li>
+                <li><a href="{{base_url()}}/job/job_list">Jobs</a></li>
+                <li><a href="{{base_url()}}/current_news">Current News</a></li>
+                <li><a href="{{base_url()}}/forum/posts">Forum</a></li>
+                <li ><a href="{{base_url()}}/user_reg" class='btn btn-primary btn-sm btn-login'>SIGN UP</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
 
@@ -89,8 +89,8 @@
 </div>
 <!--end wrapper -->
 
-<script type="text/javascript" src="/asset/job/db/jquery/jquery.min.js"></script>
-<script src="/asset/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{base_url()}}/public/asset/job/db/jquery/jquery.min.js"></script>
+<script src="{{base_url()}}/public/asset/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function($) {
         // $(".navbar-home li:nth-child(2)").click(function(e) {
@@ -101,7 +101,7 @@
         // });
     });
 </script>
-<script type="text/javascript" src="/asset/job/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="{{base_url()}}/public/asset/job/js/jquery.bxslider.min.js"></script>
 @yield('script')
     </body>
 </html>

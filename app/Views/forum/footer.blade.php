@@ -102,6 +102,6 @@ Try Iconpreparation</p>
 </div>
 
 <br>
-<a href='{{ $base_url }}login' style='margin-left:10px;' class='btn btn-primary'><i class="fa fa-signin"></i> Login Now</a>
+<a href='{{ base_url() }}/login' style='margin-left:10px;' class='btn btn-primary'><i class="fa fa-signin"></i> Login Now</a>
 
 <div class="clearfix"></div>

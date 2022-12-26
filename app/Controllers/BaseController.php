@@ -9,7 +9,7 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
-use eftec\bladeone\BladeOne;
+use eftec\Bladeone\BladeOne;
 
 
 /**
@@ -41,7 +41,7 @@ abstract class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = ['common_helper'];
+    protected $helpers = ['common_helper','slug','text_helper'];
 
     /**
      * Constructor.
@@ -61,6 +61,8 @@ abstract class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
         
         
+        
+		
         $views = APPPATH . 'Views';
         $cache = WRITEPATH . 'cache' . DIRECTORY_SEPARATOR . 'blade';
 
@@ -77,10 +79,10 @@ abstract class BaseController extends Controller
                 BladeOne::MODE_DEBUG
             );
         }
-        
-
         $this->templateEngine->pipeEnable = true;
-        $this->templateEngine->setBaseUrl(base_url());
+		$this->templateEngine->setBaseUrl(base_url());
+		
+
     }
     
     

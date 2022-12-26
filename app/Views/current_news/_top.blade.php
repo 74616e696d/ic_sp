@@ -1,6 +1,8 @@
 <?php
+use App\Helpers\text_helper;
 use App\Models\Current_news_category_model;
-$this->Current_news_category_model = new Current_news_category_model();     
+$currentNewsCategoryModel = new Current_news_category_model();
+$slug = new App\Libraries\Slug;
 
 ?>
 <div class="container">
@@ -14,20 +16,22 @@ $this->Current_news_category_model = new Current_news_category_model();
                        
                     @if(isset($featured) && $featured)
                     @foreach($featured as $row)
-                    <?php $feature_slug=$ci->slug->create_slug($row->title,1); ?>
+                    <?php $feature_slug=$slug->create_slug($row->title,1);
+                    ?>
+                   
                         <div class="row p_r">
                             <div class="hover01 column   bdr_green">
-                                <a href="{{$base_url}}news/details/{{$feature_slug}}/{{$row->id}}">
+                                <a href="{{base_url()}}news/details/{{$feature_slug}}/{{$row->id}}">
                                 <figure>
-                                <img alt="{{ $row->title }}" src="{{ $base_url }}asset/news/{{ $row->feature_img }}" class="img-responsive"></figure>
+                                <img alt="{{ $row->title }}" src="{{ base_url() }}/public/asset/news/{{ $row->feature_img }}" class="img-responsive"></figure>
                                 </a>
                             </div>
                             <div class="pa_height" style="min-height: 275px;">
-                                <h2><a title="" href="{{$base_url}}news/details/{{$feature_slug}}/{{$row->id}}">{{ $row->title }}</a></h2>
+                                <h2><a title="" href="{{base_url()}}news/details/{{$feature_slug}}/{{$row->id}}">{{ $row->title }}</a></h2>
                                 <?php $striped_desc_feature=strip_tags($row->details,'<img><a>'); ?>
                                 <p>
-                                <a href="{{$base_url}}news/details/{{$feature_slug}}/{{$row->id}}">
-                                 {{  word_limiter($striped_desc_feature,50,'...')  }} </a>
+                                <a href="{{ base_url() }}news/details/{{$feature_slug}}/{{$row->id}}">
+                                <?php echo word_limiter($striped_desc_feature,50,'...'); ?></a>
                                 </p>
                             </div>
                         </div>
@@ -35,15 +39,15 @@ $this->Current_news_category_model = new Current_news_category_model();
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 c1">
                                 <p>
                                 <?php 
-                                $category=$this->Current_news_category_model::get_text($row->category_id);
-                                $category_featured=$ci->slug->create_slug($category,1); 
-                                ?>
-                                <a href="{{ $base_url }}news/categorized/{{ $row->category_id }}/{{ $category_featured }}">
+                                $category=$currentNewsCategoryModel->get_text($row->category_id);
+                                $category_featured=$slug->create_slug($category,1); 
+                                ?> 
+                                <a href="{{ base_url() }}news/categorized/{{ $row->category_id }}/{{ $category_featured }}">
                                 <span class="category">{{$category}}</span></a>
                                 </p>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 d">
-                                <p><span class="date"><i class="fa fa-calendar"></i>{{ date_short($row->post_date) }}</span></p>
+                                <p><span class="date"><i class="fa fa-calendar"></i><?php echo date_short($row->post_date); ?></span></p>
                             </div>
                         </div>
                     @endforeach
@@ -56,9 +60,9 @@ $this->Current_news_category_model = new Current_news_category_model();
                             @foreach($latest as $row)
                             <li>
                                 <?php
-                                $latest_slug=$ci->slug->create_slug($row->title);
+                                $latest_slug=$slug->create_slug($row->title);
                                 ?>
-                                <a href="{{ $base_url }}news/details/{{ $latest_slug }}/{{ $row->id }}">{{ $row->title }}</a>
+                                <a href="{{ base_url() }}news/details/{{ $latest_slug }}/{{ $row->id }}">{{ $row->title }}</a>
                             </li>
                             @endforeach
                         </ul>
@@ -68,7 +72,7 @@ $this->Current_news_category_model = new Current_news_category_model();
                     <div class="bddo" style='padding-top:10px;'>
                         <h4>Get Our Apps On Playstore</h4>
                         <a href='https://play.google.com/store/apps/details?id=com.Iconpreparation.modeltest' target='_blank'>
-                        <img src="{{ $base_url }}asset/frontend/new/img/android.png" alt="Current World App">
+                        <img src="{{ base_url() }}/public/asset/frontend/new/img/android.png" alt="Current World App">
                         </a>
                     </div>
                     <!-- End display latest news -->
@@ -87,16 +91,16 @@ $this->Current_news_category_model = new Current_news_category_model();
                             @foreach($important as $row)
                             <li>
                                 <?php
-                                $imp_slug=$ci->slug->create_slug($row['title']);
+                                $imp_slug=$slug->create_slug($row['title']);
                                 ?>
-                                <a href="{{ $base_url }}news/details/{{ $imp_slug }}/{{ $row['id'] }}">{{ $row['title'] }}</a>
+                                <a href="{{ base_url() }}news/details/{{ $imp_slug }}/{{ $row['id'] }}">{{ $row['title'] }}</a>
                             </li>
                             <span style="border: 1px solid #eee;display: block;margin: 5px 0px;"></span>
                             @endforeach
                         </ul>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 5%">
-                        <a href="{{ $base_url }}current_news/important_news/" class="btn btn-block btn-primary">View All</a>
+                        <a href="{{ base_url() }}current_news/important_news/" class="btn btn-block btn-primary">View All</a>
                     </div>
                     @endif
                 </div>
@@ -125,14 +129,14 @@ $this->Current_news_category_model = new Current_news_category_model();
                                 $dtls=preg_replace('/\s+/', ' ', $dtls);
                                  ?>
                                 <p style='padding-left:0 !important;' class='on-this-day-content'>
-                                <img  alt="{{ $row->title }}" src="{{ $base_url }}asset/news/{{ $row->photo }}" class="img-responsive">
+                                <img  alt="{{ $row->title }}" src="{{ base_url() }}/public/asset/news/{{ $row->photo }}" class="img-responsive">
                                 {{ $dtls }}
                                 </p>
                             </div>
                             <p style='padding-left:0;'>
                                 <span class="date">
                                 <i class="fa fa-calendar"></i>
-                                {{ date('F d',strtotime($row->happening_date)) }}
+                                <?php echo date('F d',strtotime($row->happening_date)); ?>
                                 </span>
                             </p>
 
@@ -165,7 +169,7 @@ $this->Current_news_category_model = new Current_news_category_model();
     </script>
     <!-- End of G&R_320x50 -->
     
-  <!--   <img width="100%" alt="" class="img-responsive" src="{{ $base_url }}asset/frontend/img/add2.gif"> -->
+  <!--   <img width="100%" alt="" class="img-responsive" src="{{ base_url() }}asset/frontend/img/add2.gif"> -->
     <br>
 </div>
 </div>
